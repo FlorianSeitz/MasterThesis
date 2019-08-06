@@ -1,0 +1,97 @@
+\documentclass[a4paper,man,natbib]{apa6}
+
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{graphicx}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage{amsmath,amsfonts,mathabx}
+\usepackage{epigraph}
+
+%\setmainfont{Times New Roman} 
+%\setsansfont{Times New Roman} 
+%\setmonofont{Times New Roman} 
+
+\usepackage[doublespacing]{setspace}
+
+\setlength\epigraphwidth{.8\textwidth}
+
+\title{The Discrete Metric in Categorization Under Time Pressure}
+\shorttitle{Discrete Metric Under Time Pressure}
+\author{B.Sc. Florian Seitz}
+\affiliation{University of Basel}
+
+\abstract{Your abstract here.}
+
+\begin{document}
+\maketitle
+
+\vspace*{\fill}
+\epigraph{There is nothing more basic than categorization to our thought, perception, action, and speech. [...] An understanding of how we categorize is central to any understanding of how we think and how we function, and therefore central to an understanding of what makes us human.}{George Lakoff, 1987, pp.5--6}
+
+\section{Introduction}
+
+Categorization refers to the partitioning of a number of objects into a smaller amount of groups where each group is associated with a unique response \citep{cohen2005bridging, nosofsky1986attention, nosofsky1989further}. As people categorize countless times throughout their life, the mental process of classifying objects into categories is considered to be one of the most fundamental cognitive phenomena overall \citep{ashby2001categorization, bruner1956study, cohen2005bridging, lakoff1987women, goldstone2003concepts} and thus has received substantial attention in scientific research. From the late 70s on, numerous cognitive models have been established which try to describe how people perform categorizations \citep[for an overview over the diverse models of categorization, see][]{kruschke2008models,wills2013models}. The present thesis analyzes an especially popular categorization model---the generalized context model \citep{nosofsky1984choice, nosofsky1986attention, nosofsky2011generalized}. The generalized context model is defined as an exemplar--based model, where people retrieve instances from memory (i.e., exemplars) and compare them with an instance to categorize \citep[i.e., the probe;][]{medin1978context}. Comparisons between probe and exemplars are expressed as distances which in turn are used to predict category membership. Exemplar-based models of categorization may be distinguished from prototype-based models of categorization, which assume the retrieval of each category's central tendency instead of individual exemplars \citep{reed1972pattern, smith1997straight, smith1998prototypes}. 
+
+In the following parts of this introduction, I will describe and review the generalized context model. Then, I will argue that people might use a binary measure of distance, the discrete metric, when confronted with time pressure during categorization. Differences between the generalized context model implemented with the usual distance metric and the one implemented with the discrete distance will be discussed before presenting the study which aimed to test against each other these two models in a categorization task with time pressure.
+
+\subsection{The Generalized Context Model}
+The generalized context model \citep{nosofsky1986attention} assumes three steps when people categorize a probe into one of two a priori defined categories: First, people retrieve exemplars from both categories and calculate distances between the probe and each retrieved exemplar. These distances can be interpreted as how far away the probe is spatially positioned from the different exemplars. Second, each distance is transformed into a measure of similarity, such that high distances correspond to low similarities and low distances to high similarities. Finally, the aggregate similarity of the probe to all exemplars of one category relative to the aggregate similarity to both categories states the model's prediction of classification probability. The higher the similarity of the probe to exemplars of one category the higher the probability of assigning the probe into this very category.
+
+In the following, I will describe all three steps the generalized context model assumes in more detail. The formalization of the model is equivalent to \cite[][pp.281--282]{nosofsky1989further}, except that it has been generalized to more than two dimensions. 
+
+\subsubsection{Distance}
+The generalized context model \citep{nosofsky1984choice,nosofsky1986attention} assumes that in order to assign probe $i$ into one of two categories, people first calculate Minkowski distances between the probe and previously encountered exemplars from the categories that are retrieved from memory. A Minkowski distance is a distance function (also named metric), defined as: 
+\begin{equation}
+d_{ij} = \left[\sum\limits_{m=1}^M w_{m}*\mid x_{im} - x_{jm}\mid ^r\right]^\frac{1}{r},
+\end{equation}
+where $d_{ij}$ is the Minkowski distance between probe $i$ and exemplar $j$, $x_{im}$ is the value of probe $i$ on feature $m$, $w_{m}$ is the attention weight attributed to dimension $m$ (with $0 \leq w_{m} \leq 1$ and $\sum w_{m} = 1$), $M$ is the number of dimensions, and $r$ describes the form of the distance metric. In dependence of the  value of $r$, the Minkowski distance can take countless forms such as the Manhattan distance ($r = 1$) or the Euclidean distance ($r = 2$, a generalized form of the Pythagorean theorem for $n$ dimensions). With higher values of $r$ absolute differences on dimensions between the probe and exemplar are increasingly exponentially scaled. This means that as the absolute differences on a dimension increases, its share of the total distance increases faster with higher values of $r$. Values of $r$ are typically constrained to be equal to or higher than 1, as for $0<r<1$ the triangle inequality, an axiom needed for a distance of the Generalized Context Model to be a metric \textbf{explain more precisely}, is violated \citep{jakel2008similarity,francois2007concentration,tversky1982similarity,beals1968foundations}. In such a case, the distance is not anymore a metric \citep[][p. 5]{kress1989linear}. 
+
+%To Do: Write that Minkowski is geometric (cite Goldstone for other similarity calculations) and then write below that geometric models with r < 1 don't fulfill the triangle inequality axiom. Highly separable vs. integral
+
+The distance $d_{ij}$ is then transformed into a measure of similarity by means of an exponential decay function \citep{nosofsky1986attention}:
+\begin{equation}
+s_{ij} = \exp\left(-c*d_{ij}^p\right),
+\end{equation}
+where $s_{ij}$ is the similarity between exemplars $i$ and $j$, $c$ (with $0 \leq c$) is an overall sensitivity parameter, and $p$ .
+
+\begin{equation}
+P(R_{A}|S_{i}) = \frac{b_{A}\sum\limits_{j \in C_{A}} s_{ij}}{b_{A}\sum\limits_{j \in C_{A}} s_{ij} + (1 - b_{A})\sum\limits_{k \in C_{B}} s_{ik}}
+\end{equation}
+
+Because it assumes people to rely on actual instances experienced in the past to represent categories, the generalized context model is an exemplar--based model of categorization \citep{medin1978context, nosofsky1986attention}. The model diverges in this assumption from other existing approaches which assume that categories are represented by central tendencies (i.e., prototypes) which are retrieved and compared to the probe at hand \citep{nosofsky1987attention}. The main difference between exemplar-based and prototype-based categorization models thus occurs in the first step of the categorization procedure as different category representatives are being retrieved from memory (i.e., exemplars or prototypes). Due to the very fine--grained representation of categories using actual experienced instances, the categorization predictions of the generalized context model are sensitive to influences from individual exemplars---influences which are absent in prototype models \citep{nosofsky2011generalized, nosofsky1992exemplars, medin1978context}. Following a long debate of whether people represent categories using prototypes or exemplars, research indicates that exemplar-based categorization models using a non--linear similarity rule, such as the generalized context model, outperform prototype models in explaining participants' categorization behavior \citep{nosofsky2002exemplar, nosofsky1992exemplars}.
+
+\subsection{Categorization under Time Pressure}
+
+\section{Method}
+
+\subsection{Optimal Experimental Design}
+
+An optimal experimental design is defined as a design with ``the greatest likelihood of differentiating the models under consideration'' \cite[][p. 500]{myung2009optimal}. Being able to differentiate between the different models under consideration means that each model is associated with unique behavioral predictions. Participant behavior can thus be linked with greater certainty to one of the models under consideration. Furthermore, through the maximization of model prediction differences, design optimization increases model recovery (i.e., the model with which data has been generated is more often found to be the best-fitting model as well). The advantages of design optimization are thus two-fold: A participant's behavior can be associated more exclusively with one of the models under consideration and the odds are higher that this best-fitting model is the model that was used by the participant to generate her responses \citep[albeit that each scientific model is only an approximation of the participant's cognitive model; see][]{myung2009optimal}. Design optimization maximizes thus the experiment's degree of informativeness and cost-effectiveness by improving the design while keeping the necessary sample and trial size at a low level \citep{cavagnaro2009better, ouyang2016practical, raffert2012optimally, atkinson2007optimum, nelson2005finding}. 
+
+The advantages of design optimization are most pronounced when the different models differ quantitatively instead of qualitatively and are thus more similar to each other as well as when several variables have to be considered simultaneously during the designing process of the experiment making thus a good design hardly visible to the naked eye \citep{myung2009optimal}. Both these criteria apply for categorization studies: First, categorization models with a Minkowski metric vs. a discrete metric differ in their predicted probabilities of assigning a given stimulus into one of two categories. Second, the experimental design includes many variables to consider, such as which stimuli to include in either learning or test set and within the learning set how the stimuli are assigned to the two categories. \cite{myung2009optimal} conducted a reanalysis of the designs of the first two experiments of \cite{smith1998prototypes} which aimed at distinguishing the GCM \citep{nosofsky1986attention} from the Multiplicative Prototype Model \citep{smith1998prototypes} by using six-dimensional binary stimuli. \cite{myung2009optimal} found that \citeauthor{smith1998prototypes}'s nonlinearly separable design had a higher model recovery than their linearly separable design (88.8\% vs. 72.9\%) and both performed better than a simple design where each category was almost exclusively associated with either one of the two dimension values and where model recovery was at a rate of 53.1\%. Still, the optimal design that was possible yielded a model recovery rate of 96.3\%, minimizing thus the risk of a model fitting error by eight percent compared to the nonlinearly separable design.  
+
+In the light of these findings, we ran simulations to find the design that would best discriminate between the Generalized Context and the Multiplicative Prototype Model both implemented with the Minkowski and the discrete metric. The simulations were iterated for the following variables: i) the design (i.e., defining learning and test set as well as category structure within the learning set), ii) the true model (either the Generalized Context Model or the Multiplicative Prototype Model with either the Minkowski metric or the discrete metric), iii) the true parameter combination (i.e., attention weights \textit{w}'s ranging from $0$ to $1$ in steps of $1/3$ and the overall sensitivity parameter \textit{c} ranging from $0.1$ to $4.1$ in steps of $1$), and iv) the fitting model (either the Generalized Context Model or the Multiplicative Prototype Model with either the Minkowski metric or the discrete metric).
+
+Given that our stimuli consisted of three dimensions with four values each, we had a total number of 64 stimuli out of which we wanted to have eight in the learning set (i.e., four in each category). Not counting exactly inversed and thus repetitive partitioning of learning stimuli into the two categories (e.g., stimuli 1--4 in category A and stimuli 5--8 in category B vs. stimuli 1--4 in category B and stimuli 5--8 in category A) this yields $\dfrac{64!}{56!*8!}*\dfrac{8!}{8!*4!*2} = 154,915,787,880$ possible designs. As this would lead the simulations to last very long, we restricted the design space to include only designs in which all stimuli had on each dimension maximally a city-block distance of 1 to each other. This restriction at the same time minimized the risk of biasing participants towards one of the models in the learning phase as the distances resulting from value ranges of 1 are the same for the Minkowski and the discrete metric and leads to a more approachable number of 140 possible designs.
+
+For a given design, true model, and true parameter combination we simulated binary participant responses (i.e., category A or B) for the learning set which was replicated 20 times and for the test set which was replicated 10 times. All simulated responses were based on the predictions of the true model. We then fitted the free parameters (i.e., attention weights and the overall sensitivity parameter) for every model to the simulated data of the learning set excluding the first eight trials where models have not encountered enough instances to render informative predictions. We then calculated predictions for the test set with every model using the fitted parameters above and calculated the logarithmic likelihood between these predictions and the simulated participant responses for the test set under the true model. This data finally allowed us to check which model best fitted the data produced by the true model as thus ultimately to calculate the model recovery for a given design across all true parameter combinations.
+
+We used optimal experimental design (Myung & Pitt, 2009) to find a categorization environment such that the two model versions (i.e., discrete metric and Minkowski metric) can be optimally discriminated given the responses during the test phase, in the expectation. This involved finding the best of all possible designs (that is, of all category structures for all possible 8 of 64 stimuli in the learning phase) under the constraint that all learning stimuli differed from each other maximally by 1 one each dimension. This constraint ensures that neither the discrete nor the Minkowski metric is favored by the learning phase design, because both metrics yield identical distances if feature values differ by maximally 1. Simulations were conducted over the following parameter ranges: attention weights ws ranging each from 0 to 1 and summing up to 1, varied in steps of ⅓ and the sensitivity parameter c ranging from 0.1 to 4.1 in steps of 1. The decay parameter p and the parameter defining the distance metric r were fixed to 1. For each possible design and model parameter a model recovery was conducted. It involved comparing model performance on the simulated test phase data after estimating the free model parameters from the simulated learning phase data. We aimed to find the design for which the winning model recovered the true data-simulating model most often, across all possible model parameters.
+
+\subsubsection{Model Recovery}
+The generalized context model with the discrete metric was correctly recovered in 100\% of all cases, the generalized context model with the Minkowski metric was correctly recovered in 86.7\% \textbf{(I have to recheck this)} of all cases. 
+
+\bibliography{example}
+
+\end{document}
+
+% KLEINSCHREIBUNG von Modellen (z.B. generalized context model anstatt Generalized Context Model)
+%
+
+
+%
+% Please see the package documentation for more information
+% on the APA6 document class:
+%
+% http://www.ctan.org/pkg/apa6
+%
