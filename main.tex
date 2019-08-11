@@ -10,17 +10,28 @@
 %\setmainfont{Times New Roman} 
 %\setsansfont{Times New Roman} 
 %\setmonofont{Times New Roman} 
+% Keywords command
 
+\providecommand{\keywords}[1]
+{
+  \textbf{\textit{Keywords---}} #1
+}
 \usepackage[doublespacing]{setspace}
 
 \setlength\epigraphwidth{.8\textwidth}
 
 \title{The Discrete Metric in Categorization Under Time Pressure}
+% Effect of Time Pressure on Distance Metrics in Categorization
 \shorttitle{Discrete Metric Under Time Pressure}
-\author{B.Sc. Florian Seitz}
+\author{Florian I. Seitz}
 \affiliation{University of Basel}
 
-\abstract{Your abstract here.}
+\abstract{The generalized context model \citep{nosofsky1986attention}, which excels at explaining human categorization behavior, assumes the Minkowski metric to represent psychological distance. I propose that in categorization under time pressure people compute psychological distance heuristically with the discrete metric which counts the number of non-identical feature values. 
+Sixty-one psychology students (43 females, $M_{age}$ = 24.13 years, age range: 19--50 years) from the University of Basel acquired in the learning phase the category structure of eight stimuli with three quarternary features by trial--by--trial supervised category learning. After meeting the learning criteria participants categorized six novel and four old stimuli 14 times without feedback in the test phase. We applied time pressure to a random half of participants in the test phase.
+Inferential tests at the aggregate level showed that pressure the Minkowski metric could account for participants' categorization behavior both with and without time (\textit{p} < .001, respectively). Cognitive modeling yielded that the discrete metric with attention centered on all features in the condition without time pressure and a random choice model in the condition with time pressure outperformed the other models both on the aggregate and on the individual level.
+The present findings suggest that the discrete may not apply to people in speeded categorization situations but to a substantial amount of people in categorization without time pressure. We compare these findings to a potential rule--based model and point out potential differences in cognitive processing when categorizing stimuli with known versus unknown feature values.} 
+
+\keywords{categorization, time pressure, Minkowski metric, discrete metric, distance}
 
 \begin{document}
 \maketitle
@@ -85,6 +96,11 @@ We used optimal experimental design (Myung & Pitt, 2009) to find a categorizatio
 
 \subsubsection{Model Recovery}
 The generalized context model with the discrete metric was correctly recovered in 100\% of all cases, the generalized context model with the Minkowski metric was correctly recovered in 86.7\% \textbf{(I have to recheck this)} of all cases. 
+
+\subsection{Participants}
+Sixty-one psychology students (43 females, $M_{age}$ = 24.13 years, $SD_{age}$ = 6.39 years, age range: 19--50 years) from the University of Basel were recruited over an intern online platform to participate in a categorization study. All participants had a high--school or a higher degree and were asked for color blindness, visual impairment, and in case of impaired vision whether they carried a visual aid during the experiment. As a compensation for study participation participants received course credit proportionally to the amount of time needed to complete the study. Eight additional subjects participated in the study but had to be excluded from the analyses as they reported that the task was rather or absolutely unclear to them. Participants selected themselves into the sample and there were no inclusion criteria.
+
+Sample size was predetermined by a model--based power simulation where the true probability of choosing the Minkowski metric changed from 70\% to 30\% and the true probability of choosing the discrete metric changed from 30\% to 70\% when time pressure was introduced. This resulted in a total sample size of N=60 (n=30 in each condition) to achieve 89\% power. Figure \textit{ref} illustrates.
 
 \bibliography{example}
 
