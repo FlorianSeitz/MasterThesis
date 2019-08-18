@@ -137,17 +137,21 @@ The parameters of the generalized context model with the multidimensional Minkow
 Log likelihoods of the observed test phase data were computed from the model’ predictions. We compared the multidimensional model with the discrete and the Minkowski metric, the unidimensional model with the discrete and the Minkowski metric, and a baseline random-choice model. If a unidimensional strategy attending to the second dimension described a participant best, we assumed they followed a random-choice model, because in our design these two models couldn't be distinguished. 
 
 \subsubsection{Model comparison at the aggregate level}
-Given the models with optimal parameters for each participants, the median log likelihood of the test phase data was computed. To test H1d, the time pressure data will be used, to test H2b the data without time pressure was used. The median log likelihoods were transformed into evidence strength (Akaike weights, Wagenmakers \& Farrell, 2004), and pairwise comparisons between models were conducted (as in Wagenmakers \& Farrell, 2004, p. 194). To determine the rank order of models, a model was accepted as superior to another model if its evidence ratio (normalized probability of one model over the other) in the paired comparison exceeded .90, rejected if it was inferior to .10; otherwise inconclusive evidence resulted. 
+For each model, using the optimal parameters for each participant, the median log likelihood of the test phase data was computed separately for the condition with and without time pressure. The median log likelihoods were transformed into evidence strength (Akaike weights, Wagenmakers \& Farrell, 2004), and pairwise comparisons between models were conducted (as in Wagenmakers \& Farrell, 2004, p. 194). To determine the rank order of models, a model was accepted as superior to another model if its evidence ratio (normalized probability of one model over the other) in the paired comparison exceeded .90, rejected if it was inferior to .10; otherwise inconclusive evidence resulted. 
 
-Using the data with time pressure, the rank order hypothesized in H1d (the multidimensional and unidimensional discrete metric on the first rank, the unidimensional Minkowski metric on the second rank, the multidimensional Minkowski metric on the third rank, and the random choice model on the final rank) couldn't be established. Specifically, the random model outperformed the remaining models, followed by the multidimensional discrete model on the second rank, the multidimensional Minkowski model on the third rank, and the unidimensional discrete model as well as the unidimensional Minkowski model on the final rank. 
+Using the data with time pressure, the rank order hypothesized in H1d (the multidimensional and unidimensional discrete metric on the first rank, the unidimensional Minkowski metric on the second rank, the multidimensional Minkowski metric on the third rank, and the random choice model on the final rank) couldn't be established. Specifically, the random model outperformed the remaining models, followed by the multidimensional discrete model on the second rank, the multidimensional Minkowski model on the third rank, and the unidimensional discrete model as well as the unidimensional Minkowski model on the final rank. I reject thus H1d. The mean log likelihood for the different The mean absolute percentage error (MAPE) for 
 
 Also without time pressure, the rank order hypothesized in H2b (the multidimensional Minkowski metric on the first rank and the random choice model on the last rank) couldn't be demonstrated. Specifically, the multidimensional discrete model exceeded the remaining models, followed by the multidimensional Minkowski model on the second rank, the random choice model on the third rank, the unidimensional Minkowski model on the forth rank, and the unidimensional discrete model on the final rank. Both H1d and H2b were thus rejected.
 
 Additionally the following descriptive model fit measures will be reported for the test phase data for each time pressure condition and model: the mean, median, and the standard deviation of the log likelihood, mean absolute percentage error, and mean accuracy based on the arg max choice rule.
 
-
 \subsubsection{Model comparison at the individual level}
+For each model, using the optimal parameters for each participant, the log likelihood of the test phase data was computed per participant. 
+To test the differences in the number of people best described by each model (H1e and H2c) individual strategy classification based on Akaike weights (Wagenmakers \& Farrell, 2004) will be conducted using the test phase data. A person will be assigned to a model if the model’s Akaike weight exceeds .90. If no weight exceeds .90 the person is classified as not described by any model. Given the resulting distribution of participants assigned to models, H1e and H2c will be tested using a Chi-Squared goodness of fit test against an expected equal distribution. Pairwise comparisons will examine if the most frequent model equals to the hypothesized model (Holm-Bonferroni correction).
 
+To test the rank order of models defined by the number of participants the models describe best (H1f and H2c) the same pairwise comparison procedure as outlined in “model comparison at the aggregate level” will be used.
+
+To test if the number of participants following a given model changes with time pressure (H3a, H3b), the equality of the distribution of the best-predicting models over participants will be compared between time pressure conditions. To this end Fisher’s Exact Test with pairwise post hoc comparisons will be used (Holm-Bonferroni-corrected).
 
 
 \bibliography{example}
@@ -155,7 +159,7 @@ Additionally the following descriptive model fit measures will be reported for t
 \end{document}
 
 % KLEINSCHREIBUNG von Modellen (z.B. generalized context model anstatt Generalized Context Model)
-%
+% Questions: do I have to use the template? Use Wilcoxon sign test to check whether observed rank orders differ from hypothesized ones?
 
 
 %
