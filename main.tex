@@ -143,7 +143,30 @@ Using the data with time pressure, the rank order hypothesized in H1d (the multi
 
 Also without time pressure, the rank order hypothesized in H2b (the multidimensional Minkowski metric on the first rank and the random choice model on the last rank) couldn't be demonstrated. Specifically, the multidimensional discrete model exceeded the remaining models, followed by the multidimensional Minkowski model on the second rank, the random choice model on the third rank, the unidimensional Minkowski model on the forth rank, and the unidimensional discrete model on the final rank. Both H1d and H2b were thus rejected.
 
-Additionally the following descriptive model fit measures will be reported for the test phase data for each time pressure condition and model: the mean, median, and the standard deviation of the log likelihood, mean absolute percentage error, and mean accuracy based on the arg max choice rule.
+% Additionally the following descriptive model fit measures will be reported for the test phase data for each time pressure condition and model: the mean, median, and the standard deviation of the log likelihood, mean absolute percentage error, and mean accuracy based on the arg max choice rule.
+
+\begin{table}[ht]
+\caption{Descriptive model fit measures}
+\label{tab:model_fit_agg}
+\centering
+\resizebox{\textwidth}{!}{
+\begin{tabular}{r|lllll|lllll}
+  & \multicolumn{5}{l}{\emph{Time pressure}} & \multicolumn{5}{l}{\emph{No time pressure}} \\
+  \hline
+  Model & M(LL) & Md(LL) & SD(LL) & MAPE & arg max & M(LL) & Md(LL) & SD(LL) & MAPE & arg max \\ 
+  \hline
+  MDM & -115.53 & -110.25 & 28.52 & 0.47 & 0.51 & -84.58 & -79.60 & 29.85 & 0.38 & 0.63 \\ 
+  MMM & -137.07 & -120.97 & 60.07 & 0.47 & 0.53 & -106.25 & -94.25 & 54.72 & 0.36 & 0.69 \\ 
+  UDM & -160.29 & -150.89 & 66.27 & 0.42 & 0.51 & -181.95 & -151.16 & 83.10 & 0.46 & 0.52 \\ 
+  UMM & -163.57 & -149.03 & 83.47 & 0.34 & 0.69 & -163.04 & -132.58 & 86.10 & 0.34 & 0.68 \\ 
+  RAND & -89.79 & -93.23 & 7.76 & 0.50 & 0.00 & -97.04 & -97.04 & 0.00 & 0.50 & 0.00 \\ 
+  \hline
+\end{tabular}
+}
+\begin{tablenotes}
+ \emph{Note:} Different fit measures are presented for the different models separately for the conditions with and without time pressure. Fit measures are the following: M(LL) = mean log likelihood, Md(LL) = median log likelihood, SD(LL) = standard deviation of log likelihood, MAPE = mean absolute percentage error, arg max = mean accuracy based on the arg max choice rule. Models are the following: MDM = multidimensional discrete metric, MMM = multidimensional Minkowski metric, UDM = unidimensional discrete metric, UMM = unidimensional Minkowski metric, RAND = random choice model. 
+\end{tablenotes}
+\end{table}
 
 \subsubsection{Model comparison at the individual level}
 For each model, using the optimal parameters for each participant, the log likelihood of the test phase data was computed per participant. 
