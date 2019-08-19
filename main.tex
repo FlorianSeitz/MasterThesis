@@ -27,7 +27,7 @@
 \affiliation{University of Basel}
 
 \abstract{The generalized context model \citep{nosofsky1986attention}, which excels at explaining human categorization behavior, assumes the Minkowski metric to represent psychological distance. I propose that in categorization under time pressure people compute psychological distance heuristically with the discrete metric which counts the number of non-identical feature values. 
-Sixty-one psychology students (43 females, $M_{age}$ = 24.13 years, age range: 19--50 years) from the University of Basel acquired in the learning phase the category structure of eight stimuli with three quarternary features by trial--by--trial supervised category learning. After meeting the accuracy criterion participants categorized six novel and four old stimuli 14 times without feedback in the test phase. We applied time pressure to a random half of participants in the test phase.
+61 psychology students (43 females, $M_{age}$ = 24.13 years, age range: 19--50 years) from the University of Basel acquired in the learning phase the category structure of eight stimuli with three quarternary features by trial--by--trial supervised category learning. After meeting the accuracy criterion participants categorized six novel and four old stimuli 14 times without feedback in the test phase. We applied time pressure to a random half of participants in the test phase.
 Inferential tests at the aggregate level showed that pressure the Minkowski metric could account for participants' categorization behavior both with and without time (\textit{p} < .001, respectively). Cognitive modeling yielded that the discrete metric with attention centered on all features in the condition without time pressure and a random choice model in the condition with time pressure outperformed the other models both on the aggregate and on the individual level.
 The present findings suggest that the discrete may not apply to people in speeded categorization situations but to a substantial amount of people in categorization without time pressure. We compare these findings to a potential rule--based model and point out potential differences in cognitive processing when categorizing stimuli with known versus unknown feature values.} 
 
@@ -145,8 +145,6 @@ Also without time pressure, the rank order hypothesized in H2b (the multidimensi
 
 Table 1 shows the median log likelihood as well as mean and the standard deviation of the log likelihood, the mean absolute prediction error (MAPE), and the mean accuracy based on the arg max choice rule for the different models separately for the conditions with and without time pressure.
 
-% Additionally the following descriptive model fit measures will be reported for the test phase data for each time pressure condition and model: the mean, median, and the standard deviation of the log likelihood, mean absolute percentage error, and mean accuracy based on the arg max choice rule.
-
 \begin{table}[ht]
 \caption{Descriptive model fit measures}
 \label{tab:model_fit_agg}
@@ -181,6 +179,13 @@ The rank order of models was defined by the same pairwise comparison procedure u
 
 Finally, the equality of the distribution of the best-predicting models over participants between the conditions with and without time pressure was found significant using a Fisher's Exact Test (\textit{p} < .001). Pairwise post hoc comparisons (Holm-Bonferroni-corrected) yielded that H3a (the number of persons described by the multidimensional or the unidimensional discrete model is higher in the condition with than without time pressure) had to be rejected, given that more people were described by a discrete model without than with time pressure (15 and 3, respectively, \textit{p} = 1). Also, H3b (the number of persons described by the multidimensional Minkowski model is higher in the condition without than with time pressure) was rejected even though the multidimensional Minkowski model described nine people in the condition without time pressure, but only two people in the condition with time pressure (\textit{p} = .09).
 
+\subsection{Explorative Analyses}
+
+\subsubsection{Rule--based model}
+A rule-based model was fit to the test phase data at the participant level, by means of a linear regression with features as predictors. As the test phase included 140 trials per participant, the complete test phase data fitted and predicted by the regression model in favor of a large data set to fit but also risking overfitting. In prediction, the fitted regression coefficients for every participants were used. Across participants, the mean estimated regression coefficients (with the standard deviation in brackets) were -0.05 (0.18) for the first feature, 0.05 (0.11) for the second feature, -0.18 (0.14) for the third feature, and 0.73 (0.27) for the intercept which represents the stimulus 000. The mean R squared across all participants was .29 (SD = .19).
+
+The rule-based model was compared to the other models using the model classification procedure by evidence weights detailed under ''model comparison at the individual level''. In the condition with time pressure, 28 people were described by the rule--based model, one person by the unidimensional Minkowski model, and one person couldn't be described by any of the models. In the condition without time pressure, 10 people were described by the linear model, eight by the multidimensional discrete model, seven by the multidimensional Minkowski model, and six couldn't be described by any of the models. 
+
 \subsubsection{The discrete threshold model}
 
 \bibliography{example}
@@ -188,7 +193,7 @@ Finally, the equality of the distribution of the best-predicting models over par
 \end{document}
 
 % KLEINSCHREIBUNG von Modellen (z.B. generalized context model anstatt Generalized Context Model)
-% Questions: do I have to use the template? Use Wilcoxon sign test to check whether observed rank orders differ from hypothesized ones? Table: Do differences between MAPE and M(LL) make sense? MINK-MULTI or MMM or GCM with blabla in figures, tables etc.? check threshold model. what about chisq.multcomp? what about fisher.bintest?
+% Questions: do I have to use the template? Use Wilcoxon sign test to check whether observed rank orders differ from hypothesized ones? Table: Do differences between MAPE and M(LL) make sense? MINK-MULTI or MMM or GCM with blabla in figures, tables etc.? check threshold model. what about chisq.multcomp? what about fisher.bintest? Ask again about regression model (half data).
 
 
 %
