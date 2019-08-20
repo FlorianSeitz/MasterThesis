@@ -90,7 +90,6 @@ Finally, the multidimensional \textit{and the unidimensional} discrete metric de
 \section{Method}
 
 \subsection{Optimal Experimental Design}
-
 An optimal experimental design is defined as a design with ``the greatest likelihood of differentiating the models under consideration'' \cite[][p. 500]{myung2009optimal}. Being able to differentiate between the different models under consideration means that each model is associated with unique behavioral predictions. Participant behavior can thus be linked with greater certainty to one of the models under consideration. Furthermore, through the maximization of model prediction differences, design optimization increases model recovery (i.e., the model underlying the data is found to be the best-fitting model as well). The advantages of design optimization are thus two-fold: A participant's behavior can be associated more exclusively with one of the models under consideration and the odds are higher that this best-fitting model is the model that was used by the participant to generate her responses \citep[albeit that each scientific model is only an approximation of the participant's cognitive model; see][]{myung2009optimal}. Design optimization maximizes thus the experiment's degree of informativeness and cost-effectiveness by improving the design while keeping the necessary sample and trial size at a low level \citep{cavagnaro2009better, ouyang2016practical, raffert2012optimally, atkinson2007optimum, nelson2005finding}. 
 
 The advantages of design optimization are most pronounced when the different models differ quantitatively instead of qualitatively as well as when several variables have to be considered simultaneously during the designing process of the experiment making thus a good design hardly visible to the naked eye \citep{myung2009optimal}. Both criteria apply for categorization studies.
@@ -106,10 +105,43 @@ For a given design, true model, and true parameter combination we simulated bina
 \subsubsection{Model Recovery}
 The generalized context model with the discrete metric was correctly recovered in 100\% of all cases, the generalized context model with the Minkowski metric was correctly recovered in 86.7\% \textbf{(I have to recheck this)} of all cases. 
 
-\subsection{Materials}
+\subsection{Materials and Design}
 The experiment was conducted on \textit{computers} and programmed in Expyriment \citep{krause2014expyriment}.  Participants classified different products (i.e. stimuli) into brand L or brand R (i.e., categories). Products were based on the material of \cite{albrechtxxxunstacking}. Each product consisted of the same three ingredients (i.e., features) represented by grey beams with one to four quantity units of each ingredient (i.e., feature values) represented by colored squares. Figure \textit{ref} illustrates the material. Participants learned the category structure of eight stimuli in the learning phase, and categorized four of them and six novel stimuli in the test phase. Figure \textit{ref or table} shows the learning and test set environment. Brand name and the corresponding correct arrow key as well as the distribution of the features to the three grey beams and the three colors of the stimuli were randomized across participants.
 
-\subsection{Design}
+\begin{table}[ht]
+\caption{Environment used}
+\label{tab:environment}
+\centering
+\resizebox{\textwidth}{!}{
+\begin{tabular}{cccccccccc}
+  \hline \\
+  Stimulus & Category & MDM & MMM & UDM(1) & UDM(2) & UDM(3) & UMM(1) & UMM(2) & UMM(3)  \\ \\
+  \hline \\
+  \multicolumn{10}{c}{\emph{Learning phase}} \\ \\
+  001 & A & -110.25 & 28.52 & 0.47 & 0.51 & -84.58 & -79.60 & 29.85 & 0.38 \\ 
+  002* & B & -120.97 & 60.07 & 0.47 & 0.53 & -106.25 & -94.25 & 54.72 & 0.36 \\ 
+  011 & A & -150.89 & 66.27 & 0.42 & 0.51 & -181.95 & -151.16 & 83.10 & 0.46 \\ 
+  012* & A & -149.03 & 83.47 & 0.34 & 0.69 & -163.04 & -132.58 & 86.10 & 0.34 \\ 
+  101* & A & -93.23 & 7.76 & 0.50 & 0.00 & -97.04 & -97.04 & 0.00 & 0.50 \\ 
+  102 & B & -93.23 & 7.76 & 0.50 & 0.00 & -97.04 & -97.04 & 0.00 & 0.50 \\ 
+  111* & B & -93.23 & 7.76 & 0.50 & 0.00 & -97.04 & -97.04 & 0.00 & 0.50 \\ 
+  112 & B & -93.23 & 7.76 & 0.50 & 0.00 & -97.04 & -97.04 & 0.00 & 0.50 \\ \\
+  \hline \\
+  \multicolumn{10}{c}{\emph{Test phase}} \\ \\
+  100 & - & .37 & .91 & .26 & .50 & .50 & .26 & .50 & .74 \\ 
+  003 & - & .63 & .09 & .74 & .50 & .50 & .74 & .50 & .26 \\ 
+  221 & - & .85 & .07 & .50 & .50 & .74 & .26 & .50 & .74 \\ 
+  231 & - & .85 & .07 & .50 & .50 & .74 & .26 & .50 & .74 \\ 
+  321 & - & .85 & .07 & .50 & .50 & .74 & .26 & .50 & .74 \\ 
+  331 & - & .85 & .07 & .50 & .50 & .74 & .26 & .50 & .74 \\ \\
+  \hline \\
+\end{tabular}
+}
+\begin{tablenotes}
+ \emph{Note:} Different fit measures are presented for the different models separately for the conditions with and without time pressure. Models are the following: MDM = multidimensional discrete metric, MMM = multidimensional Minkowski metric, UDM = unidimensional discrete metric, UMM = unidimensional Minkowski metric. 
+\end{tablenotes}
+\end{table}
+
 Participants assigned products to brand L and brand R by pressing the left and right arrow key, respectively. The dependent variable was thus the pressed key which represented the product's assumed brand. The independent variable was the time pressure induced to a random half of participants in the test phase. It allowed a participant 400 milliseconds plus 30\% of the median decision time needed by this participant across the final 100 learning trials. The study had thus a repeated--measures 2x1 between--subjects design. Further variables assessed were response times per trial and the amount of time pressure if any.
 
 \subsection{Participants}
