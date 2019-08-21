@@ -6,7 +6,9 @@
 \usepackage[colorinlistoftodos]{todonotes}
 \usepackage{amsmath,amsfonts,mathabx}
 \usepackage{epigraph}
-
+\usepackage[figuresright]{rotating}
+\usepackage[ansinew]{inputenc}
+\usepackage{multirow}
 %\setmainfont{Times New Roman} 
 %\setsansfont{Times New Roman} 
 %\setmonofont{Times New Roman} 
@@ -108,39 +110,48 @@ The generalized context model with the discrete metric was correctly recovered i
 \subsection{Materials and Design}
 The experiment was conducted on \textit{computers} and programmed in Expyriment \citep{krause2014expyriment}.  Participants classified different products (i.e. stimuli) into brand L or brand R (i.e., categories). Products were based on the material of \cite{albrechtxxxunstacking}. Each product consisted of the same three ingredients (i.e., features) represented by grey beams with one to four quantity units of each ingredient (i.e., feature values) represented by colored squares. Figure \textit{ref} illustrates the material. Participants learned the category structure of eight stimuli in the learning phase, and categorized four of them and six novel stimuli in the test phase. Figure \textit{ref or table} shows the learning and test set environment. Brand name and the corresponding correct arrow key as well as the distribution of the features to the three grey beams and the three colors of the stimuli were randomized across participants.
 
-\begin{table}[ht]
-\caption{Environment used}
-\label{tab:environment}
-\centering
-\resizebox{\textwidth}{!}{
+\begin{sidewaystable}
+\begin{center}
+\begin{threeparttable}
+\caption{Environment used and median model predictions}
 \begin{tabular}{cccccccccc}
-  \hline \\
-  Stimulus & Category & MDM & MMM & UDM(1) & UDM(2) & UDM(3) & UMM(1) & UMM(2) & UMM(3)  \\ \\
-  \hline \\
-  \multicolumn{10}{c}{\emph{Learning phase}} \\ \\
-  001 & A & -110.25 & 28.52 & 0.47 & 0.51 & -84.58 & -79.60 & 29.85 & 0.38 \\ 
-  002* & B & -120.97 & 60.07 & 0.47 & 0.53 & -106.25 & -94.25 & 54.72 & 0.36 \\ 
-  011 & A & -150.89 & 66.27 & 0.42 & 0.51 & -181.95 & -151.16 & 83.10 & 0.46 \\ 
-  012* & A & -149.03 & 83.47 & 0.34 & 0.69 & -163.04 & -132.58 & 86.10 & 0.34 \\ 
-  101* & A & -93.23 & 7.76 & 0.50 & 0.00 & -97.04 & -97.04 & 0.00 & 0.50 \\ 
-  102 & B & -93.23 & 7.76 & 0.50 & 0.00 & -97.04 & -97.04 & 0.00 & 0.50 \\ 
-  111* & B & -93.23 & 7.76 & 0.50 & 0.00 & -97.04 & -97.04 & 0.00 & 0.50 \\ 
-  112 & B & -93.23 & 7.76 & 0.50 & 0.00 & -97.04 & -97.04 & 0.00 & 0.50 \\ \\
-  \hline \\
-  \multicolumn{10}{c}{\emph{Test phase}} \\ \\
-  100 & - & .37 & .91 & .26 & .50 & .50 & .26 & .50 & .74 \\ 
-  003 & - & .63 & .09 & .74 & .50 & .50 & .74 & .50 & .26 \\ 
-  221 & - & .85 & .07 & .50 & .50 & .74 & .26 & .50 & .74 \\ 
-  231 & - & .85 & .07 & .50 & .50 & .74 & .26 & .50 & .74 \\ 
-  321 & - & .85 & .07 & .50 & .50 & .74 & .26 & .50 & .74 \\ 
-  331 & - & .85 & .07 & .50 & .50 & .74 & .26 & .50 & .74 \\ \\
-  \hline \\
+\toprule
+ &  & \multicolumn{4}{c}{Discrete} & \multicolumn{4}{c}{Minkowski} \\
+\cmidrule(r){3-6} \cmidrule(r){7-10}
+ &  & \multicolumn{1}{c}{Multidimensional} & \multicolumn{3}{c}{Unidimensional} & \multicolumn{1}{c}{Multidimensional} & \multicolumn{3}{c}{Unidimensional} \\
+\cmidrule(r){4-6} \cmidrule(r){8-10}
+Stimulus & \multicolumn{1}{c}{Category} &  & \multicolumn{1}{c}{w_1 = 1} & \multicolumn{1}{c}{w_2 = 1} & \multicolumn{1}{c}{w_3 = 1} &  & \multicolumn{1}{c}{w_1 = 1} & \multicolumn{1}{c}{w_2 = 1} & \multicolumn{1}{c}{w_3 = 1}\\
+\midrule
+\addlinespace
+\multicolumn{2}{c}{\emph{Learning phase}} \\
+\addlinespace
+001 & B & 0.97 & 0.74 & 0.50 & 0.74 & 0.97 & 0.74 & 0.50 & 0.74\\
+002\makebox[0pt][l]{$^{\ast}$} & A & 0.09 & 0.74 & 0.50 & 0.26 & 0.09 & 0.74 & 0.50 & 0.26\\
+011 & B & 0.99 & 0.74 & 0.50 & 0.74 & 0.99 & 0.74 & 0.50 & 0.74\\
+012\makebox[0pt][l]{$^{\ast}$} & B & 0.93 & 0.74 & 0.50 & 0.26 & 0.93 & 0.74 & 0.50 & 0.26\\
+101\makebox[0pt][l]{$^{\ast}$} & B & 0.91 & 0.26 & 0.50 & 0.74 & 0.91 & 0.26 & 0.50 & 0.74\\
+102 & A & 0.03 & 0.26 & 0.50 & 0.26 & 0.03 & 0.26 & 0.50 & 0.26\\
+111\makebox[0pt][l]{$^{\ast}$} & A & 0.07 & 0.26 & 0.50 & 0.74 & 0.07 & 0.26 & 0.50 & 0.74\\
+112 & A & 0.01 & 0.26 & 0.50 & 0.26 & 0.01 & 0.26 & 0.50 & 0.26\\
+\midrule
+\addlinespace
+\multicolumn{2}{c}{\emph{Test phase}} \\
+\addlinespace
+003 & - & 0.63 & 0.74 & 0.50 & 0.50 & 0.09 & 0.74 & 0.50 & 0.26\\
+100 & - & 0.37 & 0.26 & 0.50 & 0.50 & 0.91 & 0.26 & 0.50 & 0.74\\
+221 & - & 0.85 & 0.50 & 0.50 & 0.74 & 0.07 & 0.26 & 0.50 & 0.74\\
+231 & - & 0.85 & 0.50 & 0.50 & 0.74 & 0.07 & 0.26 & 0.50 & 0.74\\
+321 & - & 0.85 & 0.50 & 0.50 & 0.74 & 0.07 & 0.26 & 0.50 & 0.74\\
+331 & - & 0.85 & 0.50 & 0.50 & 0.74 & 0.07 & 0.26 & 0.50 & 0.74\\
+\bottomrule
+\addlinespace
 \end{tabular}
-}
-\begin{tablenotes}
- \emph{Note:} Different fit measures are presented for the different models separately for the conditions with and without time pressure. Models are the following: MDM = multidimensional discrete metric, MMM = multidimensional Minkowski metric, UDM = unidimensional discrete metric, UMM = unidimensional Minkowski metric. 
+\begin{tablenotes}[para]
+\textit{Note.} Median model predictions for the stimuli used in the learning phase and the test phase. The four stimuli from the learning phase marked with an asterisk also appeared in the test phase.
 \end{tablenotes}
-\end{table}
+\end{threeparttable}
+\end{center}
+\end{sidewaystable}
 
 Participants assigned products to brand L and brand R by pressing the left and right arrow key, respectively. The dependent variable was thus the pressed key which represented the product's assumed brand. The independent variable was the time pressure induced to a random half of participants in the test phase. It allowed a participant 400 milliseconds plus 30\% of the median decision time needed by this participant across the final 100 learning trials. The study had thus a repeated--measures 2x1 between--subjects design. Further variables assessed were response times per trial and the amount of time pressure if any.
 
@@ -183,30 +194,64 @@ Using the data with time pressure, the rank order hypothesized in H1d (the multi
 
 Also without time pressure, the rank order hypothesized in H2b (the multidimensional Minkowski metric on the first rank and the random choice model on the last rank) couldn't be demonstrated. Specifically, the multidimensional discrete model exceeded the remaining models, followed by the multidimensional Minkowski model on the second rank, the random choice model on the third rank, the unidimensional Minkowski model on the forth rank, and the unidimensional discrete model on the final rank. Both H1d and H2b were thus rejected.
 
-Table 1 shows the median log likelihood as well as mean and the standard deviation of the log likelihood, the mean absolute prediction error (MAPE), and the mean accuracy based on the arg max choice rule for the different models separately for the conditions with and without time pressure.
+Table 2 shows the median log likelihood as well as mean and the standard deviation of the log likelihood, the mean absolute prediction error (MAPE), and the mean accuracy based on the arg max choice rule for the different models separately for the conditions with and without time pressure.
 
+\begin{sidewaystable}
+\begin{center}
+\begin{threeparttable}
+\caption{Descriptive model fit measures}
+\begin{tabular}{cccccccccccccc}
+\toprule
+ &  & \multicolumn{6}{c}{Time Pressure} & \multicolumn{4}{c}{No Time Pressure}\\
+\cmidrule(r){3-8} \cmidrule(r){9-14}
+ &  & \multicolumn{3}{c}{Log likelihood} & & & & \multicolumn{3}{c}{Log likelihood} & & & \\
+\cmidrule(r){3-5} \cmidrule(r){9-11}
+Dimensionality & \multicolumn{1}{c}{Metric} & \multicolumn{1}{c}{M} & \multicolumn{1}{c}{Md} & \multicolumn{1}{c}{SD} & \multicolumn{1}{c}{MAPE} & \multicolumn{1}{c}{Arg max} & \multicolumn{1}{c}{MSE} & \multicolumn{1}{c}{M} & \multicolumn{1}{c}{Md} & \multicolumn{1}{c}{SD} & \multicolumn{1}{c}{MAPE} & \multicolumn{1}{c}{Arg max} & \multicolumn{1}{c}{MSE}\\
+\midrule
+\addlinespace
+\multicolumn{2}{c}{\emph{Generalized Context Model}} \\
+\addlinespace
+\multirow{2}{*}{Multidimensional} & Discrete & -115.53 & -110.25 & 28.52 & 0.47 & 0.51 & 0.31 & -84.58 & -79.60 & 29.85 & 0.38 & 0.63 & 0.21\\
+ & Minkowski & -137.07 & -120.97 & 60.07 & 0.47 & 0.53 & 0.34 & -106.25 & -94.25 & 54.72 & 0.36 & 0.69 & 0.24\\
+\multirow{2}{*}{Unidimensional} & Discrete & -160.29 & -150.89 & 66.27 & 0.42 & 0.51 & 0.32 & -181.95 & -151.16 & 83.10 & 0.46 & 0.52 & 0.34\\
+ & Minkowski & -163.57 & -149.03 & 83.47 & 0.34 & 0.69 & 0.29 & -163.04 & -132.58 & 86.10 & 0.34 & 0.68 & 0.29\\
+\addlinespace
+\multicolumn{2}{c}{\emph{Random--Choice Model}} & -89.79 & -93.23 & 7.76 & 0.50 & 0.00 & 0.25 & -97.04 & -97.04 & 0.00 & 0.50 & 0.00 & 0.25\\
+\bottomrule
+\addlinespace
+\end{tabular}
+\begin{tablenotes}[para]
+\textit{Note.} Different fit measures for the different models separately for the conditions with and without time pressure. 
+          Fit measures are the following: M(LL) = mean log likelihood, Md(LL) = median log likelihood, SD(LL) = standard deviation of log likelihood, MAPE = mean absolute percentage error, Arg max = mean accuracy based on the arg max choice rule, MSE = mean--square error.
+\end{tablenotes}
+\end{threeparttable}
+\end{center}
+\end{sidewaystable}
+
+\iffalse
 \begin{table}[ht]
 \caption{Descriptive model fit measures}
 \label{tab:model_fit_agg}
 \centering
 \resizebox{\textwidth}{!}{
-\begin{tabular}{r|lllll|lllll}
-  & \multicolumn{5}{l}{\emph{Time pressure}} & \multicolumn{5}{l}{\emph{No time pressure}} \\
-  \hline
-  Model & M(LL) & Md(LL) & SD(LL) & MAPE & arg max & M(LL) & Md(LL) & SD(LL) & MAPE & arg max \\ 
-  \hline
-  MDM & -115.53 & -110.25 & 28.52 & 0.47 & 0.51 & -84.58 & -79.60 & 29.85 & 0.38 & 0.63 \\ 
-  MMM & -137.07 & -120.97 & 60.07 & 0.47 & 0.53 & -106.25 & -94.25 & 54.72 & 0.36 & 0.69 \\ 
-  UDM & -160.29 & -150.89 & 66.27 & 0.42 & 0.51 & -181.95 & -151.16 & 83.10 & 0.46 & 0.52 \\ 
-  UMM & -163.57 & -149.03 & 83.47 & 0.34 & 0.69 & -163.04 & -132.58 & 86.10 & 0.34 & 0.68 \\ 
-  RAND & -89.79 & -93.23 & 7.76 & 0.50 & 0.00 & -97.04 & -97.04 & 0.00 & 0.50 & 0.00 \\ 
-  \hline
+\begin{tabular}{cc|lllll|lllll}
+  \multicolumn{2}{c}{\emph{Generalized context model}} & \multicolumn{5}{l}{\emph{Time pressure}} & \multicolumn{5}{l}{\emph{No time pressure}} \\
+  \hline \\
+  Dimensionality & Metric & M(LL) & Md(LL) & SD(LL) & MAPE & arg max & M(LL) & Md(LL) & SD(LL) & MAPE & arg max \\ \\
+  \hline \\
+  multi & discrete & -115.53 & -110.25 & 28.52 & 0.47 & 0.51 & -84.58 & -79.60 & 29.85 & 0.38 & 0.63 \\ 
+  multi & Minkowski & -137.07 & -120.97 & 60.07 & 0.47 & 0.53 & -106.25 & -94.25 & 54.72 & 0.36 & 0.69 \\ 
+  uni & discrete & -160.29 & -150.89 & 66.27 & 0.42 & 0.51 & -181.95 & -151.16 & 83.10 & 0.46 & 0.52 \\ 
+  uni & Minkowski & -163.57 & -149.03 & 83.47 & 0.34 & 0.69 & -163.04 & -132.58 & 86.10 & 0.34 & 0.68 \\ 
+  \multicolumn{2}{c}{random} & -89.79 & -93.23 & 7.76 & 0.50 & 0.00 & -97.04 & -97.04 & 0.00 & 0.50 & 0.00 \\ \\
+  \hline \\
 \end{tabular}
 }
 \begin{tablenotes}
  \emph{Note:} Different fit measures are presented for the different models separately for the conditions with and without time pressure. Fit measures are the following: M(LL) = mean log likelihood, Md(LL) = median log likelihood, SD(LL) = standard deviation of log likelihood, MAPE = mean absolute percentage error, arg max = mean accuracy based on the arg max choice rule. Models are the following: MDM = multidimensional discrete metric, MMM = multidimensional Minkowski metric, UDM = unidimensional discrete metric, UMM = unidimensional Minkowski metric, RAND = random choice model. 
 \end{tablenotes}
 \end{table}
+\fi
 
 \subsubsection{Model comparison at the individual level}
 For each model, using each participant's optimal parameters, the log likelihood of the test phase data was computed per participant. Individual log likelihoods were transformed into Akaike weights (Wagenmakers \& Farrell, 2004) and individual strategy classification was conducted on these Akaike weights. Specifically, if any model’s Akaike weight exceeded .90 the person was assigned to that model; else the person was classified as not described by any model. The resulting distribution of participants assigned to models is shown in Figure \textit{ref}.
