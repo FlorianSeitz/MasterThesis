@@ -228,31 +228,6 @@ Dimensionality & \multicolumn{1}{c}{Metric} & \multicolumn{1}{c}{M} & \multicolu
 \end{center}
 \end{sidewaystable}
 
-\iffalse
-\begin{table}[ht]
-\caption{Descriptive model fit measures}
-\label{tab:model_fit_agg}
-\centering
-\resizebox{\textwidth}{!}{
-\begin{tabular}{cc|lllll|lllll}
-  \multicolumn{2}{c}{\emph{Generalized context model}} & \multicolumn{5}{l}{\emph{Time pressure}} & \multicolumn{5}{l}{\emph{No time pressure}} \\
-  \hline \\
-  Dimensionality & Metric & M(LL) & Md(LL) & SD(LL) & MAPE & arg max & M(LL) & Md(LL) & SD(LL) & MAPE & arg max \\ \\
-  \hline \\
-  multi & discrete & -115.53 & -110.25 & 28.52 & 0.47 & 0.51 & -84.58 & -79.60 & 29.85 & 0.38 & 0.63 \\ 
-  multi & Minkowski & -137.07 & -120.97 & 60.07 & 0.47 & 0.53 & -106.25 & -94.25 & 54.72 & 0.36 & 0.69 \\ 
-  uni & discrete & -160.29 & -150.89 & 66.27 & 0.42 & 0.51 & -181.95 & -151.16 & 83.10 & 0.46 & 0.52 \\ 
-  uni & Minkowski & -163.57 & -149.03 & 83.47 & 0.34 & 0.69 & -163.04 & -132.58 & 86.10 & 0.34 & 0.68 \\ 
-  \multicolumn{2}{c}{random} & -89.79 & -93.23 & 7.76 & 0.50 & 0.00 & -97.04 & -97.04 & 0.00 & 0.50 & 0.00 \\ \\
-  \hline \\
-\end{tabular}
-}
-\begin{tablenotes}
- \emph{Note:} Different fit measures are presented for the different models separately for the conditions with and without time pressure. Fit measures are the following: M(LL) = mean log likelihood, Md(LL) = median log likelihood, SD(LL) = standard deviation of log likelihood, MAPE = mean absolute percentage error, arg max = mean accuracy based on the arg max choice rule. Models are the following: MDM = multidimensional discrete metric, MMM = multidimensional Minkowski metric, UDM = unidimensional discrete metric, UMM = unidimensional Minkowski metric, RAND = random choice model. 
-\end{tablenotes}
-\end{table}
-\fi
-
 \subsubsection{Model comparison at the individual level}
 For each model, using each participant's optimal parameters, the log likelihood of the test phase data was computed per participant. Individual log likelihoods were transformed into Akaike weights (Wagenmakers \& Farrell, 2004) and individual strategy classification was conducted on these Akaike weights. Specifically, if any model’s Akaike weight exceeded .90 the person was assigned to that model; else the person was classified as not described by any model. The resulting distribution of participants assigned to models is shown in Figure \textit{ref}.
 
@@ -299,9 +274,19 @@ The present thesis examined whether people simplify their psychological distance
 \end{document}
 
 % KLEINSCHREIBUNG von Modellen (z.B. generalized context model anstatt Generalized Context Model)
-% Questions: do I have to use the template? Use Wilcoxon sign test to check whether observed rank orders differ from hypothesized ones? Table: Do differences between MAPE and M(LL) make sense? MINK-MULTI or MMM or GCM with blabla in figures, tables etc.? check threshold model. what about chisq.multcomp? what about fisher.bintest? Ask again about regression model (half data). Write discrete metric as formula? Discrete-threshold model fitted to learning phase? without (vs. with) okay? do simulation studies with the MPM have to be in thesis?
-% To do: look for start and end date, which computers were used
+% Questions: do I have to use the template? nope, should be okay, Jana checks this
+% Use Wilcoxon sign test to check whether observed rank orders differ from hypothesized ones? 
+% Table: Do differences between MAPE and M(LL) make sense? could make sense as MAPE is severe when predictions and obs are small
+% MINK-MULTI or MMM or GCM with blabla in figures, tables etc.? spell it out!
+% check threshold model. what about chisq.multcomp? what about fisher.bintest? Ask again about regression model (half data). 
+% Write discrete metric as formula? yes, perhaps begin with degree of belief (evidence strength) = probability for category 1, choice rule and go to distance computation; softmax am Ende der Modellierung --> for both model versions we use the soft max
+% Discrete-threshold model fitted to learning phase? 
+% without (vs. with) okay? don't use brackets, write with time pressure than without time pressure
+% do simulation studies with the MPM have to be in thesis? no
 
+% To do: look for start and end date, which computers were used
+% Jäkel, Schölkopf, Wichman: Generalization and similarity 
+% search: environment complexity --> metric changes? no feedback --> metric changes? consequences (false categorizations give minus points)
 %
 % Please see the package documentation for more information
 % on the APA6 document class:
