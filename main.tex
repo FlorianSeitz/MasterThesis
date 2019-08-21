@@ -7,7 +7,7 @@
 \usepackage{amsmath,amsfonts,mathabx}
 \usepackage{epigraph}
 \usepackage[figuresright]{rotating}
-\usepackage[ansinew]{inputenc}
+%\usepackage[ansinew]{inputenc}
 \usepackage{multirow}
 %\setmainfont{Times New Roman} 
 %\setsansfont{Times New Roman} 
@@ -102,18 +102,27 @@ In the light of these findings, we ran simulations to find a categorization envi
 
 % Out of the 64 possible stimuli we predefined to have eight stimuli in the learning set (i.e., four in each category). Not counting exactly inversed and thus repetitive partitioning of learning stimuli into the two categories (e.g., stimuli 1--4 in category A and stimuli 5--8 in category B vs. stimuli 1--4 in category B and stimuli 5--8 in category A) this yields $\dfrac{64!}{56!*8!}*\dfrac{8!}{8!*4!*2} = 154,915,787,880$ possible designs. As this would lead the simulations to last very long, we restricted the design space to include only designs in which all stimuli had on each dimension maximally a city-block distance of 1 to each other. This restriction at the same time minimized the risk of biasing participants towards one of the models in the learning phase as the distances resulting from value ranges of 1 are the same for the Minkowski and the discrete metric and leads to a more approachable number of 140 possible designs.
 
-For a given design, true model, and true parameter combination we simulated binary participant responses (i.e., category A or B) based on the true model's predictions for the learning set which was replicated 20 times and for the test set (i.e., the stimuli that were not part of the learning stimuli) which was replicated 10 times. Then, the free parameters (i.e., attention weights and the overall sensitivity parameter) of both models were fitted to the simulated data of the learning set excluding the first eight uninformative trials\cmmnt{ where models have not encountered enough instances to render informative predictions} and fixed to the resulting optimal parameters for each participant. Next, predictions for the test set were computed with every model and the log likelihood between the simulated participant responses under the true model and the predictions of each fitting model was calculated for the test phase data. This procedure allowed conducting model recoveries for every design across all permissible parameter combinations. The best design was the design for which the winning model recovered the true data--simulating model best, across the permissible model parameters. In the best design, the learning criterion was met by both models when adding a softmax choice rule. From the 56 stimuli in the test phase of the best design, the six stimuli that discriminated models best were selected. Figure 2 shows the stimuli in the resulting design.
+For a given design, true model, and true parameter combination we simulated binary participant responses (i.e., category A or B) based on the true model's predictions for the learning set which was replicated 20 times and for the test set (i.e., the stimuli that were not part of the learning stimuli) which was replicated 10 times. Then, the free parameters (i.e., attention weights and the overall sensitivity parameter) of both models were fitted to the simulated data of the learning set excluding the first eight uninformative trials\cmmnt{ where models have not encountered enough instances to render informative predictions} and fixed to the resulting optimal parameters for each participant. Next, predictions for the test set were computed with every model and the log likelihood between the simulated participant responses under the true model and the predictions of each fitting model was calculated for the test phase data. This procedure allowed conducting model recoveries for every design across all permissible parameter combinations. The best design was the design for which the winning model recovered the true data--simulating model best, across the permissible model parameters. In the best design, the learning criterion was met by both models when adding a softmax choice rule. From the 56 stimuli in the test phase of the best design, the six stimuli that discriminated models best were selected. Figure \ref{fig:environment} shows the stimuli in the resulting design.
 
 \subsubsection{Model Recovery}
 The generalized context model with the discrete metric was correctly recovered in 100\% of all cases, the generalized context model with the Minkowski metric was correctly recovered in 86.7\% \textbf{(I have to recheck this)} of all cases. 
 
 \subsection{Materials and Design}
-The experiment was conducted on \textit{computers} and programmed in Expyriment \citep{krause2014expyriment}.  Participants classified different products (i.e. stimuli) into brand L or brand R (i.e., categories). Products were based on the material of \cite{albrechtxxxunstacking}. Each product consisted of the same three ingredients (i.e., features) represented by grey beams with one to four quantity units of each ingredient (i.e., feature values) represented by colored squares. Figure \textit{ref} illustrates the material. Participants learned the category structure of eight stimuli in the learning phase, and categorized four of them and six novel stimuli in the test phase. Figure \textit{ref or table} shows the learning and test set environment. Brand name and the corresponding correct arrow key as well as the distribution of the features to the three grey beams and the three colors of the stimuli were randomized across participants.
+The experiment was conducted on \textit{computers} and programmed in Expyriment \citep{krause2014expyriment}.  Participants classified different products (i.e. stimuli) into brand L or brand R (i.e., categories) by pressing the left and right arrow key, respectively. Products were based on the material of \cite{albrechtxxxunstacking}. Each product consisted of the same three ingredients (i.e., features) represented by grey beams with one to four quantity units of each ingredient (i.e., feature values) represented by colored squares. Figure \textit{ref} illustrates the material. Participants learned the category structure of eight stimuli in the learning phase, and categorized four of them and six novel stimuli in the test phase. Figure \ref{fig:environment} illustrates the learning set and the test set environment and Table \ref{tab:environment} shows the median model predictions for all stimuli of the learning set and the test set. Brand name and the corresponding correct arrow key as well as the distribution of the features to the three grey beams and the three colors of the stimuli were randomized across participants.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width = \textwidth]{fig_environment.png}
+\caption{Learning stimuli (in black and white) including their category structure and test stimuli (in grey). Each axis of the graph represents one feature, and the coordinates of each sphere represent the feature values of the respective stimulus. Stimuli in the learning phase include all learning stimuli, stimuli in the test phase include all test stimuli as well as the learning stimuli 002, 012, 101, and 111.}
+\label{fig:environment}
+\end{figure}
+% TO DO: Omit title from figure and make figure black--white
 
 \begin{sidewaystable}
 \begin{center}
 \begin{threeparttable}
 \caption{Environment used and median model predictions}
+\label{tab:environment}
 \begin{tabular}{cccccccccc}
 \toprule
  &  & \multicolumn{4}{c}{Discrete} & \multicolumn{4}{c}{Minkowski} \\
@@ -153,12 +162,20 @@ Stimulus & \multicolumn{1}{c}{Category} &  & \multicolumn{1}{c}{w_1 = 1} & \mult
 \end{center}
 \end{sidewaystable}
 
-Participants assigned products to brand L and brand R by pressing the left and right arrow key, respectively. The dependent variable was thus the pressed key which represented the product's assumed brand. The independent variable was the time pressure induced to a random half of participants in the test phase. It allowed a participant 400 milliseconds plus 30\% of the median decision time needed by this participant across the final 100 learning trials. The study had thus a repeated--measures 2x1 between--subjects design. Further variables assessed were response times per trial and the amount of time pressure if any.
+Participants' main task was to categorize products into two brands. The dependent variable was the pressed key which represented the product's assumed brand. The independent variable was the time pressure induced to a random half of participants in the test phase. It allowed a participant 400 milliseconds plus 30\% of the median decision time needed by this participant across the final 100 learning trials. The study had thus a repeated--measures 2x1 between--subjects design. Further variables assessed were response times per trial and the amount of time pressure if any.
 
 \subsection{Participants}
 Sixty-one psychology students (43 females, $M_{age}$ = 24.13 years, $SD_{age}$ = 6.39 years, age range: 19--50 years) from the University of Basel were recruited over an online platform of the Faculty of Psychology to participate in a categorization study. All participants had a high--school or a higher degree and were asked for color blindness, visual impairment, and in case of impaired vision whether they carried a visual aid during the experiment. Participants selected themselves into the sample and there were no inclusion criteria. Up to six participants could show up to the same experimental session. Participant data were listwise deleted if the participant failed to reach the accuracy criterion in the learning phase within an hour, answered ''absolutely unclear'' or ''somewhat unclear'' to the question if the task in the experiment was clear or in the time pressure condition exceeded the time limit in more than 50\% of the test trials for a given test stimulus and in the no time pressure condition had a log transformed reaction time more than three standard deviations below the mean of the log transformed reaction times of the learning phase in more than 50\% of the test trials for a given test stimulus.  As a compensation for study participation participants received course credit proportionally to the amount of time needed to complete the study. Eight additional subjects participated in the study but had to be excluded from the analyses as they reported that the task was somewhat or absolutely unclear to them, two participants failed to reach the accuracy criterion, and two participants' data were used for pretesting purposes.
 
-Sample size was predetermined by a model--based power simulation where the true probability of choosing the Minkowski metric changed from 70\% to 30\% and the true probability of choosing the discrete metric changed from 30\% to 70\% when time pressure was introduced. This resulted in a total sample size of N=60 (n=30 in each condition) to achieve 89\% power. Figure \textit{ref} illustrates. The final sample included 31 participants without time pressure and 30 participants with time pressure.
+Sample size was predetermined by a model--based power simulation where the true probability of choosing the Minkowski metric changed from 70\% to 30\% and the true probability of choosing the discrete metric changed from 30\% to 70\% when time pressure was introduced. This resulted in a total sample size of N=60 (n=30 in each condition) to achieve 89\% power. Figure \ref{fig:power} illustrates. The final sample included 31 participants without time pressure and 30 participants with time pressure.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width = \textwidth]{fig_power.png}
+\caption{Power in dependence of sample size N. Power estimation was based on a model--based power simulation where the true probability of choosing the Minkowski metric changed from 70\% to 30\% and the true probability of choosing the discrete metric changed from 30\% to 70\% when time pressure was introduced. To achieve the aspired power of .8, 60 participants (n=30 in each condition) were needed.}
+\label{fig:power}
+\end{figure}
+% TO DO: Omit title from figure and make figure black--white
 
 \subsection{Procedure}
 After arriving at computer laboratory of the Center of Economic Psychology, participants were greeted, seated in front of a computer which was delimited from the other computers by dividing walls, and were provided with an informed consent which they could read through and sign in case of agreement. Upon signature, the experimenter typed in the participant id to start the experiment and the participant was presented a series of instructions on the computer (for the exact instructions, see \textit{appendix}. Participants first read, that they had to learn to assign different products to two different brands (brand L and brand R), that each product consisted of the same three ingredients but differed from other products in the specific ingredient quantities. They then saw a randomly chosen product (see Figure \textit{ref} for an example), read that each grey beam represented one ingredient and the number of colored squares in the beams indicated the quantity of the respective ingredient. To familiarize with the products, participants then had to click on each ingredient ten times. With each click the quantity of the respective ingredient increased or decreased by one unit, ensuring that all participants saw all possible values on each feature. Participants then read that in each trial they would be presented with a random chosen product and their task was to correctly guess the brand of the respective product by pressing the left and right arrow keys. Participants read that the experiment consisted of two phases: In the first phase, they would learn the correct brand of each product and receive feedback after entering their answer. After achieving to consistently assign the products to the correct brand, they would reach the second phase and have to assign again several products to the brand to which they belonged most likely without receiving feedback. Participants in the time pressure condition furthermore read that they would have a time limit for their response in the second phase which they shouldn't exceed.
@@ -202,7 +219,7 @@ Table 2 shows the median log likelihood as well as mean and the standard deviati
 \caption{Descriptive model fit measures}
 \begin{tabular}{cccccccccccccc}
 \toprule
- &  & \multicolumn{6}{c}{Time Pressure} & \multicolumn{4}{c}{No Time Pressure}\\
+ &  & \multicolumn{6}{c}{Time pressure} & \multicolumn{4}{c}{No time pressure}\\
 \cmidrule(r){3-8} \cmidrule(r){9-14}
  &  & \multicolumn{3}{c}{Log likelihood} & & & & \multicolumn{3}{c}{Log likelihood} & & & \\
 \cmidrule(r){3-5} \cmidrule(r){9-11}
@@ -222,7 +239,7 @@ Dimensionality & \multicolumn{1}{c}{Metric} & \multicolumn{1}{c}{M} & \multicolu
 \end{tabular}
 \begin{tablenotes}[para]
 \textit{Note.} Different fit measures for the different models separately for the conditions with and without time pressure. 
-          Fit measures are the following: M(LL) = mean log likelihood, Md(LL) = median log likelihood, SD(LL) = standard deviation of log likelihood, MAPE = mean absolute percentage error, Arg max = mean accuracy based on the arg max choice rule, MSE = mean--square error.
+          Fit measures are the following: M = mean log likelihood, Md = median log likelihood, SD = standard deviation of log likelihood, MAPE = mean absolute percentage error, Arg max = mean accuracy based on the arg max choice rule, MSE = mean--square error.
 \end{tablenotes}
 \end{threeparttable}
 \end{center}
