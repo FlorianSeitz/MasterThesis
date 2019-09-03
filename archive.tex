@@ -1,0 +1,23 @@
+Introduction: General
+Throughout this research, it was generally assumed that people compare objects metrically such that larger feature value differences between objects result in lower similarity between these objects. In tasks where computation ability is lacking people might compare objects more heuristically by checking identity of the values on a given feature. 
+
+
+Theoretical Background:
+As the main model tested in this study, the exemplar--based random--walk model assumes that people represent categories by the individual instances (i.e., exemplars) they encountered in the past. When encountering a novel stimulus to categorize (i.e., the probe) before meeting a time limit, people retrieve some of the exemplars from memory and compare them with the probe. The different exemplars race against each other for retrieval---which exemplars are retrieved from memory is dependent on how much the different exemplars are activated in memory upon perception of the probe. Specifically, the more frequently and the more recently an exemplar has been encountered in the past and the more similar the exemplar is to the probe, the higher its activation level and the more likely it is retrieved from memory. Each retrieved exemplar leads the model to update categorization probability in direction of the exemplar's category membership. After each retrieval of an exemplar, a novel race begins, such that exemplars are retrieved until a decision boundary is met. It is important to note that the exemplar--based random--walk model doesn't provide a direct mechanism of how people respond to time pressure, but rather suggest that people retrieve only a limited number of exemplars in dependence of the amount of time pressure.
+
+Minkowski metric:
+With increasing $r$ the resulting distance between a given probe and a given exemplar cannot increase and absolute differences between distances to different exemplars are reduced.
+
+Relation to prototype models:
+The difference between exemplar--based and prototype--based categorization models thus occurs during the distance computation as different category representatives are being compared to the probe (i.e., exemplars or prototypes).
+
+Optimal experimental design:
+First, categorization models with a Minkowski metric vs. a discrete metric differ in their predicted probabilities of assigning a given stimulus into one of two categories. Second, the experimental design includes many variables to consider, such as which stimuli to include in either learning or test set and within the learning set how the stimuli are assigned to the two categories. 
+
+Out of the 64 possible stimuli we predefined to have eight stimuli in the learning set (i.e., four in each category). Not counting exactly inversed and thus repetitive partitioning of learning stimuli into the two categories (e.g., stimuli 1--4 in category A and stimuli 5--8 in category B vs. stimuli 1--4 in category B and stimuli 5--8 in category A) this yields $\dfrac{64!}{56!*8!}*\dfrac{8!}{8!*4!*2} = 154,915,787,880$ possible designs. As this would lead the simulations to last very long, we restricted the design space to include only designs in which all stimuli had on each dimension maximally a city-block distance of 1 to each other. This restriction at the same time minimized the risk of biasing participants towards one of the models in the learning phase as the distances resulting from value ranges of 1 are the same for the Minkowski and the discrete metric and leads to a more approachable number of 140 possible designs.
+
+Model Recovery:
+The generalized context model with the discrete metric was correctly recovered in 100\% of all cases, the generalized context model with the Minkowski metric was correctly recovered in 86.7\% \textbf{(I have to recheck this)} of all cases. 
+
+Explorative analyses: Linear rule--based model
+When using a random half of the test phase data for each participant, the mean estimated regression coefficients (with standard deviations in brackets) turned out very similar with -0.05 (0.18) for the first feature, 0.06 (0.12) for the second feature, -0.18 (0.15) for the third feature, and 0.72 (0.29) for the intercept ($R^2$ = .32). The model comparison revealed that in the condition with time pressure 16 people were described by the rule--based model, two by the random choice model, one person by the unidimensional Minkowski model and the multidimensional Minkowski model, respectively, and ten people couldn't be described by any of the models. Without time pressure, 10 people were described by the rule--based model, nine by the multidimensional discrete model, six by the multidimensional Minkowski model, and six couldn't be described by any of the models. 
