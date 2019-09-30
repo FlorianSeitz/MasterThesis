@@ -81,7 +81,7 @@ P(R_{A}|i) = \frac{b_{A}\sum\limits_{j \in A} s_{ij}}{b_{A}\sum\limits_{j \in A}
 where $P(R_{A}|i)$ is the probability of assigning probe $i$ to category $A$, $s_{ij}$ is the similarity between probe $i$ and exemplar $j$, and $b_{A}$ is the response bias for category $A$ (with $0 \leq b_{A} \leq 1$). The function assumes probabilistic categorization in accordance with the relative aggregate similarity that is attributable to one of the two categories. The function is often referred to as Luce's choice axiom \citep{luce1959individual} and is derived from the similarity--choice model for stimulus identification \citep{luce1963detection, shepard1957stimulus}. 
 
 \subsubsection{Similarity}
-The similarity $s_{ij}$ between probe $i$ and exemplar $j$, which is needed for categorization probability, is itself computed from the distance of the two instances in a multidimensional space. The transformation of distance into similarity is given by Shepard's universal law of generalization \citep{shepard1987toward}
+The similarity $s_{ij}$ between probe $i$ and exemplar $j$, which is needed for categorization probability, is itself computed from the distance between $i$ and $j$ in a multidimensional space. The transformation of distance into similarity is given by Shepard's universal law of generalization \citep{shepard1987toward}
 \begin{equation}
 s_{ij} = \exp\left(-c*d_{ij}^p\right),
 \label{eq:similarity}
@@ -89,33 +89,33 @@ s_{ij} = \exp\left(-c*d_{ij}^p\right),
 where $d_{ij}$ is the distance between probe $i$ and exemplar $j$, $c$ (with $0 \leq c$) is an overall sensitivity parameter, and $p$ is a parameter that determines how similarity relates to psychological distance. Popular versions of the similarity function are the exponential decay function ($p = 1$) for discriminable stimuli and the Gaussian function ($p = 2$) for confusable stimuli \citep{ennis1988confusable, nosofsky1985luce}. The sensitivity parameter $c$ describes the convexity of the similarity function indicating thus the steepness with which similarity decreases at small distances. For high values of $c$, similarities are already low at small distances. For low values of $c$, similarities are still high at large distances. In both cases, the model only weakly discriminates between different sizes of distance. The parameter $c$ thus denotes a person's sensitivity to psychological distance.
 
 \subsubsection{Distance}
-As a requisite to assess the similarity, the generalized context model computes distances between probe and exemplars in a multidimensional space. A sheer inexhaustible pool of distance metrics exist that could represent the psychological distance of two objects \citep{deza2009encyclopedia}. In fact, the only prerequisites that geometric distance metrics need to meet are (a) the non--negativity axiom (all distances are 0 or higher), (b) the identity of indiscernibles (distances between identical objects are 0), (c) symmetry (the distance between two objects is independent of the order of the objects), and (d) the triangle inequality (the distance between two objects is at least as small as the distance of these two objects via a third object; \citealp{restle1959metric}). The generalized context model and related models of categorization assume the Minkowski distance, I propose that under time pressure people use the discrete distance.
+As a requisite to assess the similarity, the generalized context model computes distances between probe and exemplars in a multidimensional space. A vast number of distance metrics exist that could represent the psychological distance of two objects \citep{deza2009encyclopedia}. In fact, the only prerequisites that geometric distance metrics need to meet are (a) the non--negativity axiom (all distances are greater than or equal to 0), (b) the identity of indiscernibles (distances between identical objects are 0), (c) symmetry (the distance between two objects is independent of the order of the objects), and (d) the triangle inequality (the distance between two objects is at least as small as the distance of these two objects via a third object; \citealp{restle1959metric}). The generalized context model and related models of categorization assume the Minkowski distance. I propose that under time pressure people use the discrete distance.
 
 \paragraph{Minkowski distance}
-The Minkowski distance is formally given by 
+The Minkowski distance is formally implemented in the generalized context model as
 \begin{equation}
 d_{ij} = \left[\sum\limits_{m=1}^M w_{m}*\mid x_{im} - x_{jm}\mid ^r\right]^\frac{1}{r},
 \end{equation}
-where $d_{ij}$ is the Minkowski distance between probe $i$ and exemplar $j$, $x_{im}$ is the value of probe $i$ on feature $m$, $w_{m}$ is the attention weight attributed to feature $m$ (with $0 \leq w_{m} \leq 1$ and $\sum w_{m} = 1$), $M$ is the number of features, and $r$ describes the form of the distance metric (with $r \geq 1$). Popular instances of the Minkowski distance are the Manhattan distance ($r = 1$) for highly separable features and the Euclidean distance ($r = 2$) for integral features \citep{shepard1964attention, nosofsky1986attention, garner1974processing}. Values of $r$ are constrained to be equal to or higher than 1 for adherence with the triangle inequality \citep{jakel2008similarity,francois2007concentration,tversky1982similarity,beals1968foundations}. For $r < 1$ the Minkowski distance between probe $i$ and exemplar $j$ may thus be larger than the summed Minkowski distance between probe $i$ and exemplar $k$ and between exemplar $k$ and exemplar $j$ and in such a case the Minkowski distance is not anymore a metric \citep[][p. 5]{kress1989linear}. 
+where $d_{ij}$ is the distance between probe $i$ and exemplar $j$, $x_{im}$ is the value of probe $i$ on feature $m$, $w_{m}$ is the attention weight attributed to feature $m$ (with $0 \leq w_{m} \leq 1$ and $\sum w_{m} = 1$ \footnote{Note that the attention weights $w$s are a psychological extension of the Minkowski metric that represent differential allocation of attention across features. In its mathematical definition the Minkowski distance doesn't include attention weights.}), $M$ is the number of features, and $r$ describes the form of the distance metric (with $r \geq 1$). Popular instances of the Minkowski distance are the Manhattan distance ($r = 1$) for highly separable features and the Euclidean distance ($r = 2$) for integral features \citep{shepard1964attention, nosofsky1986attention, garner1974processing}. Values of $r$ are constrained to be equal to or higher than 1 for adherence with the triangle inequality \citep{jakel2008similarity,francois2007concentration,tversky1982similarity,beals1968foundations}. For $r < 1$ the Minkowski distance between probe $i$ and exemplar $j$ may thus be larger than the summed Minkowski distance between probe $i$ and exemplar $k$ and between exemplar $k$ and exemplar $j$ and in such a case the Minkowski distance is not anymore a metric \citep[][p. 5]{kress1989linear}. 
 
 \paragraph{Discrete distance}
 The discrete distance is formally given by 
+\begin{equation}
+d_{ij} = \left[\sum\limits_{m=1}^M w_{m}* \rho_{m}(x_{im}, x_{jm}) ^r\right]^\frac{1}{r},
+\label{eq:distance}
+\end{equation}
+
+where $\rho_{m}(x_{im}, x_{jm})$ is the discrete distance function that checks whether probe $i$ and exemplar $j$ have an identical value on dimension $m$. Checking the identity of feature values can result in a distance of 1, if probe $i$ and exemplar $j$ are not identical on dimension $m$, or in a distance of 0, if they are identical. In the generalized context model, this yields
+
 \begin{equation}
 \rho_{m}(x_{im}, x_{jm}) = 
 \begin{cases}
 	1 & x_{im} \neq x_{jm} \\
 	0 & else 
-\end{cases},
+\end{cases}.
 \end{equation}
 
-where $\rho_{m}(x_{im}, x_{jm})$ is the discrete distance function that checks whether probe $i$ and exemplar $j$ have an identical value on dimension $m$. Identity of feature value checks can result in a distance of 1, if probe $i$ and exemplar $j$ are not identical on dimension $m$ or in a distance of 0, if they are identical. In the generalized context model, this yields
-
-\begin{equation}
-d_{ij} = \left[\sum\limits_{m=1}^M w_{m}* \rho_{m}(x_{im}, x_{jm}) ^r\right]^\frac{1}{r}.
-\label{eq:distance}
-\end{equation}
-
-Thus, all parameters of the generalized context model are preserved; the only difference I assume to appear in conditions of time pressure is they way how distances between objects are computed.
+All parameters of the generalized context model are preserved in the version with the discrete distance; the only difference to the model version with the Minkowski metric lies in the way how distances between objects are computed.
 
 \subsubsection{Relation to the unidimensional generalized context model}
 Instead of using the heuristical discrete metric to simplify categorization under time pressure, people might as well base their categorization behavior on fewer stimulus features. In an extreme case, participants only attend to one feature, probably the feature they deem most relevant, and categorize a probe only based on this single feature. In the generalized context model \citep{nosofsky1989further} attention partition across features is given by the attention weights $w$s. Whereas in the multidimensional generalized context model attention weights are only constrained to be positive and to sum up to 1, in the unidimensional generalized context model one of the attention weights is set to 1 and the remaining to 0. In a given environment, there exist as many unidimensional generalized context model versions as the stimuli contain features. An important distinction between the unidimensional and the multidimensional generalized context model is that the former cannot model feature interactions as only one feature is attended to. In this study, people had to learn a non--linearly separable category structure which is impossible with the unidimensional generalized context model, as people have to attend to multiple features to be accurate enough. Given the poor categorization accuracy during learning, I hypothesize that people under time pressure lower their computational load by means of a simple distance computation (i.e., the discrete metric) instead of using the unidimensional generalized context model. I further implemented the unidimensional generalized context model with the discrete metric which needs the least computational power as both the distance metric is simplified and less features are attended to. In case this model describes a participant this is counted as evidence for the discrete metric as the primary aim of this thesis is to analyze whether people use different distance metrics in conditions with time pressure and without time pressure.
