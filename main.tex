@@ -297,6 +297,44 @@ Time Pressure x Stimulus 003 & 0.93 & 0.09 & 10.81 & <.001\\
 \end{center}
 \vspace{8mm}
 
+\begin{center}
+\begin{threeparttable}
+\caption{Hypotheses}
+\label{tab:estimates}
+\begin{tabular*}{\textwidth}{c @{\extracolsep{\fill}} cccc}
+\toprule
+\multicolumn{1}{c}{Index} & \multicolumn{1}{c}{Hypothesis} & \multicolumn{1}{c}{Prediction} & \multicolumn{1}{c}{Descriptive Means} & \multicolumn{1}{c}{Betas}\\
+\midrule
+\addlinespace
+\multicolumn{1}{c}{\emph{H1}} & \multicolumn{2}{c}{\emph{With time pressure}} \\
+\addlinespace
+H1a & people use MULTI-DISC or UNI-DISC, ... & stimulus 100: class ''B'', the others: class ''A'' & -0.18 & 0.86\\
+H1b & else UNI-MINK, ...  & stimulus 003: class ''A'', the others: class ''B'' ($w_1$ = 1) \n stimulus 003: class ''B'', the others: class ''A'' ($w_3$ = 1) & -0.21 & 0.83\\
+H1c & else MULTI-MINK. & stimulus 100: class ''A'', the others: class ''B'' & 20.56 & <.001\\
+H1d & \multicolumn{2}{c}{rank order of model fits at the aggregate level: \n MULTI-DISC = UNI-DISC > UNI-MINK > MULTI-MINK > RANDOM} & 0.09 & -24.28 & <.001\\
+H1e & \multicolumn{2}{c}{MULTI-DISC and UNI-DISC describe the most participants} & 0.08 & -10.70 & <.001\\
+H1f & \multicolumn{2}{c}{rank order of model fits at the individual level: \n MULTI-DISC = UNI-DISC > UNI-MINK > MULTI-MINK > RANDOM} & 0.09 & 10.81 & <.001\\
+\addlinespace
+\multicolumn{1}{c}{\emph{H2}} & \multicolumn{2}{c}{\emph{Without time pressure}} \\
+\addlinespace
+H2a & people use MULTI-MINK. & stimulus 100: class ''A'', the others: class ''B'' & -0.18 & 0.86\\
+H2b & \multicolumn{2}{c}{rank order of model fits at the aggregate level: \n MULTI-MINK > {MUTLI-DISC, UNI-DISC, UNI-MINK} > RANDOM} & 0.09 & -24.28 & <.001\\
+H2c & \multicolumn{2}{c}{MULTI-MINK describes the most participants \n rank order of model fits at the individual level: \n MULTI-MINK > {MUTLI-DISC, UNI-DISC, UNI-MINK} > RANDOM} & 0.09 & 10.81 & <.001\\
+\addlinespace
+\multicolumn{1}{c}{\emph{H3}} & \multicolumn{2}{c}{\emph{Across time pressure conditions}} \\
+\addlinespace
+H3a & \multicolumn{2}{c}{more people use MULTI-DISC with than without time pressure} & 0.18 & -0.18 & 0.86\\
+H3b & \multicolumn{2}{c}{more people use MULTI-MINK without than with time pressure} & 0.09 & -24.28 & <.001\\
+\bottomrule
+\addlinespace
+\end{tabular*}
+\begin{tablenotes}[para]
+\textit{Note.} Hypotheses analyzed in the present study. DISC and MINK denote the discrete metric and the Minkowski metric, respectively. MULTI and UNI denote multidimensional and unidimensional model versions of the generalized context model \citep{nosofsky1989further}, respectively. RANDOM = random choice model.
+\end{tablenotes}
+\end{threeparttable}
+\end{center}
+\vspace{8mm}
+
 The following tests refer to the coefficients of the full model. I preregistered to accept H1a, H1b, H1c, and H2a, respectively, in case the coefficient of a stimulus of interest differed from the coefficients of the remaining novel stimuli of the test phase by the algebraic sign in the correct direction or by a significant one-sided contrast. Tests of contrasts used the Holm--Bonferroni alpha--level correction \citep{holm1979simple}. H1a (people use the discrete metric under time pressure) predicted that stimulus 100 is rather classified into class ''B'' than class ''A'', whereas the remaining stimuli are rather classified into class ''A'' than class ''B'' (see Figure \ref{fig:pred_obs_agg}). However, the linear mixed model results show that stimulus 100 was mostly classified into class ''A'' with $b_{100}$ = 0.73 > $ b_{221,231,321,331}$ = 0.30 > $b_{003}$ = -1.24 ($b$s are logit least--square means and higher $b$s indicate more category ''A'' responses). The difference between $b_{100}$ and the remaining coefficients was reliable in a planned post--hoc contrast, $p$ < .001. H1b (people use a unidimensional Minkowski metric under time pressure) predicted stimulus 003 is classified into another class than the remaining stimuli (see Figure \ref{fig:pred_obs_agg}). If the first feature is attended to, stimulus 003 is classified rather into class ''A'' and the remaining stimuli into class ''B''. If the third feature is attended to, stimulus 003 is rather classified into class ''B'' and the remaining stimuli into class ''A''. The linear mixed model results showed that stimulus 003 was mostly classified into class ''B'' with the difference between $b_{003}$ and the remaining coefficients being reliable in a planned post--hoc contrast, $p$ < .001. H1c predicted the reverse of H1a, namely that stimulus 100 is rather classified into class ''A'' and the remaining stimuli into class ''B'' (see Figure \ref{fig:pred_obs_agg}). The linear mixed model results support these findings and, as shown in H1a, the difference between $b_{100}$ and the remaining coefficients was reliable in a planned post--hoc contrast, $p$ < .001. 
 
 H2a (people use the multidimensional Minkowski metric without time pressure) predicted that stimulus 100 is rather classified into class ''A'' and the remaining stimuli into class ''B'' (see Figure \ref{fig:pred_obs_agg}). The linear mixed model results were in line with this prediction with $b_{100}$ = 2.52 > $ b_{221,231,321,331}$ = 0.52 > $b_{003}$ = -3.02 (again, higher $b$s indicate more category ''A'' responses). The difference between $b_{100}$ and the remaining coefficients was reliable in a planned post--hoc contrast, $p$ < .001. 
