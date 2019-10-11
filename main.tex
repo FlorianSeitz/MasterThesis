@@ -73,6 +73,8 @@ While in the feature sampling process time pressure reduces the amount of featur
 
 %attempts to uncover the temporal development of the categorization process \citep{lamberts2000information, lamberts2002feature, nosofsky1997exemplar}. Studies from this research line analyzed people's response times in perceptual categorization and modeled how people sequentially include information and adapt their categorization probabilities. One model that arose in this research is the exemplar--based random--walk model \citep{nosofsky1997exemplar} which assumes a sequential retrieval of exemplars from memory. Specifically, the exemplars race against each other for comparison with the probe. The similarity between the probe and every exemplars than won the race is computed and category membership probability is updated accordingly. Once a benchmark in favor of one of the categories is passed, people are assumed to render their response. Response times are hence dependent on the speed with which the different exemplars race, which is in turn a function of the exemplar's presentation frequency, presentation recency, and similarity to the probe. 
 
+In sum, past research has shown that people sequentially process stimulus features and that time limits stop this process making categorization dependent on only a subset of all available features. I test an alternative process through which people cope with time pressure, namely, a heuristic comparison between the probe and exemplars. As I investigate this process within the framework of the generalized context model \citep{nosofsky1986attention}, I will now formally describe the generalized context model.
+
 \subsection{Formal Models: The Generalized Context Model With two Distance Metrics}
 One of the most prominent formal models for human categorization is the generalized context model \citep{nosofsky1984choice, nosofsky1986attention, nosofsky2011generalized} which is an exemplar--based model, where people retrieve instances from memory (i.e., exemplars) and compare them with an instance to categorize \citep[i.e., the probe;][]{medin1978context}. People are assumed to represent each exemplar as a point in a multidimensional space where the exemplar's feature values are the point's coordinates. Comparisons between probe and exemplars are expressed as distances, which can be interpreted as how far away the probe is spatially positioned from the exemplar of comparison. Distances are transformed into similarities, such that high distances correspond to low similarities and low distances to high similarities. Finally, the aggregate similarity of the probe to all exemplars of one category relative to the aggregate similarity to all exemplars states the model's prediction of category membership for the probe. The higher the similarity of the probe to the exemplars of one category the higher the model's prediction of assigning the probe into this very category. 
 
@@ -243,7 +245,7 @@ Sample size was predetermined by a model--based power simulation \citep{gluth201
 \end{figure}
 
 \subsection{Procedure}
-Participants were welcomed to the laboratory of the Center of Economic Psychology, seated within a cubicle, and provided with an informed consent which they could sign in case of agreement. Upon signature, the experimenter started the experiment and the participant was presented a series of instructions on the computer (for the exact instructions, see \textit{appendix, still need to do this}: Participants first read, that they had to learn to assign different products to two different brands (brand L and brand R), that each product consisted of the same three ingredients but differed from other products in the specific ingredient quantities. They then saw a randomly chosen product (see Figure \ref{fig:material} for an example), read that each grey beam represented one ingredient and the number of colored squares in the beams indicated the quantity of the respective ingredient. Participants had to explore all possible feature values by clicking on each feature at least ten times. Each click changed the quantity of the respective feature by one unit. Participants then read that in each trial their task was to correctly guess the brand of a randomly chosen product by pressing the left and right arrow keys. Next, participants read that in the first phase of the experiment they would learn the correct brand of each product by receiving feedback. After consistently assigning the products to the correct brand, they would in the second phase again assign products to brands, but without receiving feedback. Participants in the time pressure condition furthermore read that they would have a time limit for their response in the second phase which they should not exceed.
+Participants were welcomed to the laboratory of the Center of Economic Psychology, seated within a cubicle, and provided with an informed consent which they could sign in case of agreement. Upon signature, the experimenter started the experiment and the participant was presented a series of instructions on the computer (for the exact instructions, see the Appendix: Participants first read, that they had to learn to assign different products to two different brands (brand L and brand R), that each product consisted of the same three ingredients but differed from other products in the specific ingredient quantities. They then saw a randomly chosen product (see Figure \ref{fig:material} for an example), read that each grey beam represented one ingredient and the number of colored squares in the beams indicated the quantity of the respective ingredient. Participants had to explore all possible feature values by clicking on each feature at least ten times. Each click changed the quantity of the respective feature by one unit. Participants then read that in each trial their task was to correctly guess the brand of a randomly chosen product by pressing the left and right arrow keys. Next, participants read that in the first phase of the experiment they would learn the correct brand of each product by receiving feedback. After consistently assigning the products to the correct brand, they would in the second phase again assign products to brands, but without receiving feedback. Participants in the time pressure condition furthermore read that they would have a time limit for their response in the second phase which they should not exceed.
 
 \subsubsection{Learning phase}
 In the learning phase participants learned the category structure of eight products (see Figure \ref{fig:environment}). All blocks of the learning phase included each of the eight products; the sequence within each block was randomized. In every trial participants could assign the product to brand L or R by pressing the left and right arrow key, respectively, without any time limit. As feedback, participants were presented a happy, green smiley and the exclamation ''Richtig!'' (English: ''Correct!'') in case of a correct response and a sad, red smiley and the exclamation ''Falsch!'' (English: ''False!'') in case of a incorrect response. The product and the feedback remained visible until the participant proceeded to the next trial by pressing the upper arrow key. 
@@ -560,6 +562,60 @@ Finally, the learning environment has been established such that both the discre
 The present study analyzed whether people with low cognitive capacities simplify the categorization process by using the generalized context model \citep{nosofsky1986attention} with the heuristic discrete metric instead of the Minkowski metric. Results indicate that people do not change the distance function in dependence of the time available for categorization: Inferential statistics found that the Minkowski model version could predict responses for the test phase both with and without time pressure. Cognitive modeling found that the introduction of time pressure led to an increase of random categorization, which is in line with research on the effects of cognitive constraints on choice inconsistency \citep{olschewski2018taxing}. These results suggest that people do not adapt their strategy to the available cognitive capacities, but rather display cognitive overload which is manifested by choice inconsistency. Further categorization research may implement different existing models of stochastic choice \citep{blavatskyy2010models, becker1963stochastic} to analyze which cognitive processes underlie  randomness under low cognitive capacities.
 
 \bibliography{example}
+
+\subsection{Appendix}
+The following instructions are the original instructions in German used in the experiment. The parts in italic highlight the instructions that were shown only to participants in the condition with time pressure.
+
+\subsubsection{General instructions}
+Herzlich Willkommen zu dieser Studie, in der wir untersuchen möchten, wie Menschen Kategorisierungen vornehmen.
+
+Bitte lesen Sie die Instruktionen aufmerksam durch. Sollten die Instruktionen unklar sein oder sollte das Experiment nicht richtig funktionieren, geben Sie bitte umgehend dem Studienleiter Bescheid.
+
+In dieser Studie geht es darum zu lernen, hypothetische Produkte zu zwei Marken (Marke L oder Marke R) zuzuordnen.
+Die Pfeiltaste nach links steht für Marke L. Die Pfeiltaste nach rechts steht für Marke R.
+
+Jedes Produkt besteht aus drei Zutaten. Jedes Produkt hat eine bestimmte Menge von jeder Zutat und unterscheidet sich somit von den anderen Produkten durch eine einzigartige Kombination der Zutaten.
+Alle Produkte bestehen aus denselben drei Zutaten, d.h. die Zutaten ändern sich nicht von Produkt zu Produkt.
+
+Hier sehen Sie ein Produkt. Jede Zutat ist schematisch durch einen grauen Balken dargestellt. Die Anzahl farbiger Quadrate innerhalb der Balken gibt die Menge der jeweiligen Zutat an.
+Da Sie das Experiment nicht erfolgreich beenden können, ohne die Produkte mit allen möglichen Zutaten zu kennen, sollten Sie sich jetzt die Produkte und Zutaten in Ruhe anschauen.
+Damit Sie sich mit den Produkten vertraut machen können, klicken Sie bitte auf jede Zutat 10 mal.
+
+In jedem Durchgang wird Ihnen ein zufällig ausgewähltes Produkt mit der dazugehörigen Menge von jeder Zutat gezeigt. Ihre Aufgabe ist es, richtig zu erraten, welcher Marke (Marke L oder Marke R) das jeweilige Produkt angehört, indem Sie entweder auf die linke oder die rechte Pfeiltaste drücken.
+
+Das Experiment gliedert sich in zwei Phasen:
+In der ersten Phase sehen Sie einige Produkte mehrere Male und lernen sie der richtigen Marke (Marke L oder Marke R) zuzuordnen. Nach jedem Durchgang erhalten Sie eine Rückmeldung, ob sie richtig getippt haben. Ihre Aufgabe ist zu lernen, zu welcher Marke die einzelnen Produkte gehören, und die Produkte konsistent der richtigen Marke (R oder L) zuzuordnen. Sobald Sie dies geschafft haben, gelangen Sie zur zweiten Phase.
+
+In der zweiten Phase sehen Sie erneut einige Produkte. Ihre Aufgabe ist es jedes Produkt der Marke zuzuordnen, zu der es am wahrscheinlichsten gehört (Marke L oder Marke R). In dieser Phase gibt es allerdings keine richtige Antwort mehr - Sie erhalten deswegen auch keine Rückmeldung mehr zu Ihrer Antwort. \textit{Des Weiteren gibt es in der zweiten Phase ein Zeitlimit für Ihre Antwort, das Sie nicht überschreiten sollten.}
+
+\subsubsection{Learning phase instructions}
+Sie können nun mit der ersten Phase beginnen.
+Drücken Sie den Pfeil nach links um ein Produkt der Marke L zuzuordnen und den Pfeil nach rechts um ein Produkt der Marke R zuzuordnen.
+Haben Sie richtig getippt, erscheint ein freundliches Gesicht. Haben Sie falsch getippt, erscheint ein trauriges Gesicht.
+Sie können Sich weiterhin das Produkt und die Rückmeldung solange Sie möchten ansehen.  Durch Drücken der Pfeiltaste nach oben gelangen Sie zum nächsten Durchgang.
+Es dauert in der Regel mehrere hundert Durchgänge, bis man anfängt, etwas über die verschiedenen Produkte zu lernen - haben Sie also bitte etwas Geduld.
+
+\subsubsection{Test phase instructions}
+Nun beginnt die zweite Phase des Experiments.
+Da es in dieser Phase des Experiments keine richtigen Antworten mehr gibt, erhalten Sie nun keine Rückmeldung mehr. Weisen Sie bitte jedes Produkt derjenigen Marke zu, der das Produkt für Sie am wahrscheinlichsten angehört.
+
+\textit{In dieser Phase haben Sie nun zusätzlich ein Zeitlimit für jeden Durchgang.
+Sie haben zwischen x und y Sekunden pro Durchgang Zeit.
+Versuchen Sie bitte, dieses Zeitlimit nicht zu überschreiten!}
+
+Zuerst bearbeiten Sie einige Übungsdurchgänge, in denen Sie Ihnen schon bekannte Produkte sehen.
+Drücken Sie weiterhin den Pfeil nach links um ein Produkt der Marke L zuzuordnen und den Pfeil nach rechts um ein Produkt der Marke R zuzuordnen.
+
+\newline
+
+Sie haben die Übungsdurchgänge abgeschlossen und werden nun weitere Produkte sehen.
+Drücken Sie weiterhin den Pfeil nach links um ein Produkt der Marke L zuzuordnen und den Pfeil nach rechts um ein Produkt der Marke R zuzuordnen.
+
+\newline 
+
+Sie haben die zweite Phase nun abgeschlossen.
+Durch Drücken der Leertaste gelangen Sie zum demographischen Fragebogen.
+Bitte füllen Sie diesen zum Schluss noch aus.
 
 \end{document}
 
