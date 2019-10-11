@@ -13,6 +13,8 @@
 \usepackage{nameref}
 \usepackage{hyperref}
 \usepackage{makecell}
+\usepackage{floatrow}
+\floatplacement{figure}{!ht}
 %\renewcommand{\cellalign/theadalign}{cl}
 %\setmainfont{Times New Roman} 
 %\setsansfont{Times New Roman} 
@@ -169,14 +171,14 @@ For a given design, true model, and true parameter combination I simulated binar
 \subsection{Materials and Design}
 The experiment was conducted on Fujitsu computers (i.e., ESPRIMO C720) using Windows 7 with 1920 x 1080 BenQ screens and programmed in Expyriment \citep{krause2014expyriment} based on prior work by \cite{albrechtxxxunstacking}. Participants classified different stimuli into two categories by pressing the left and right arrow keys. The stimuli were based on the material of \cite{albrechtxxxunstacking}. Each stimulus consisted of three features represented by grey beams with feature values ranging from one to four and being represented by colored squares. Figure \ref{fig:material} illustrates the material. Participants learned the category structure of eight stimuli in the learning phase, and categorized four of them and six novel stimuli in the test phase (see Figure \ref{fig:environment}). Table \ref{tab:environment} shows the median model predictions for all stimuli of the learning set and the test set. Category labels, the key--label association, the color--feature association, and the visual mapping of features to positions on the screen were randomized across participants.
 
-\begin{figure}[h]
+\begin{figure}
 \centering
 \includegraphics{fig_material.PNG}
 \caption{Stimuli used in the experiment. Each grey beam illustrates a feature and the number of colored squares represents the feature value.}
 \label{fig:material}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}
 \centering
 \includegraphics[width = \textwidth]{fig_environment.png}
 \caption{Learning stimuli (in black and white) including their category membership and test stimuli (in grey). Each axis of the graph represents one feature, and the coordinates of each sphere represent the feature values of the respective stimulus. Stimuli in the learning phase include all learning stimuli, stimuli in the test phase include all test stimuli as well as the learning stimuli 002, 012, 101, and 111.}
@@ -194,7 +196,7 @@ The experiment was conducted on Fujitsu computers (i.e., ESPRIMO C720) using Win
 \cmidrule(r){3-6} \cmidrule(r){7-10}
  &  & \multicolumn{1}{c}{Multidimensional} & \multicolumn{3}{c}{Unidimensional} & \multicolumn{1}{c}{Multidimensional} & \multicolumn{3}{c}{Unidimensional} \\
 \cmidrule(r){4-6} \cmidrule(r){8-10}
-Stimulus & \multicolumn{1}{c}{Category} &  & \multicolumn{1}{c}{$w$_1 = 1} & \multicolumn{1}{c}{$w$_2 = 1} & \multicolumn{1}{c}{$w$_3 = 1} &  & \multicolumn{1}{c}{$w$_1 = 1} & \multicolumn{1}{c}{$w$_2 = 1} & \multicolumn{1}{c}{$w$_3 = 1} & \multicolumn{1}{p{20mm}}{Participant Responses}\\
+Stimulus & \multicolumn{1}{c}{Category} &  & \multicolumn{1}{c}{$w$_1 = 1} & \multicolumn{1}{c}{$w$_2 = 1} & \multicolumn{1}{c}{$w$_3 = 1} &  & \multicolumn{1}{c}{$w$_1 = 1} & \multicolumn{1}{c}{$w$_2 = 1} & \multicolumn{1}{c}{$w$_3 = 1} & \multicolumn{1}{p{20mm}}{Responses}\\
 \midrule
 \addlinespace
 \multicolumn{2}{c}{\emph{Learning phase}} \\
@@ -238,9 +240,9 @@ Participants selected themselves into the sample and there were no inclusion cri
 
 Sample size was predetermined by a model--based power simulation \citep{gluth2019importance}. Across participants the true probability of choosing the Minkowski metric changed from 70\% to 30\% and the true probability of choosing the discrete metric changed from 30\% to 70\% when time pressure was introduced. For every participant, a random combination of parameters that met the accuracy criterion was sampled for the two model versions, respectively, and a mixing probability was sampled from a normal distribution truncated between 0 and 1 with the mean being equal to the share of participants using the discrete metric in the respective time pressure condition and SD =  .3. For any given test phase trial the mixing probability indicated how much the predictions of the discrete model version influenced the probabilities underlying simulated participant responses relatively to the predictions of the Minkowski model version. The log likelihood of the simulated responses was calculated for both model versions on the participant level and transformed into Akaike weights \citep{wagenmakers2004aic}. A given model was accepted if its Akaike weight exceeded .95. One--sided two proportion z--tests were calculated for each sample size comparing the proportion of accepted discrete model versions with time pressure and without time pressure. Figure \ref{fig:power} illustrates the proportion of significant results for every sample sizes across 1000 iterations. Given an aspired power of .8, a total sample size of N = 60 (n = 30 in each condition) was necessary to achieve 89\% power. The final sample included 31 participants without time pressure and 30 participants with time pressure.
 
-\begin{figure}[h]
+\begin{figure}
 \centering
-\includegraphics[width = \textwidth]{fig_power.png}
+\includegraphics{fig_power.png}
 \caption{Power in dependence of sample size N. Power was estimated in a model--based power simulation where the true probability of using the Minkowski metric changed from 70\% to 30\% and the true probability of using the discrete metric changed from 30\% to 70\% when time pressure was introduced. To achieve the aspired power of .8, 60 participants (n=30 in each condition) were needed.}
 \label{fig:power}
 \end{figure}
@@ -255,7 +257,7 @@ Figure \ref{fig:timeline} illustrates two trials of the learning phase.
 
 After the first 100 learning trials participants received every 50 trials feedback on their accuracy in the last 100 trials. To continue with the test phase, participants needed to correctly classify the last three occurrences of each stimulus and reach 80\% accuracy overall in the last 100 trials. If participants did not meet this accuracy criterion within an hour, the experiment was discontinued and the participants received appropriate course credit.
 
-\begin{figure}[h]
+\begin{figure}
 \centering
 \includegraphics[width = \textwidth]{fig_timeline.png}
 \caption{Timeline of the learning phase. Participants could look at at a given product for as long as they wished (first and third image) and enter their response via the left and right arrow keys. In case of a correct response, a happy, green smiley as well as ''Richtig!'' (English: ''Correct!'') appeared (second image). In case of an incorrect response, a sad, red smiley as well as ''Falsch!'' (English: ''False!'') appeared (forth image). In both cases, people could continue to look at the feedback for as long as they wished before proceeding to the next trial via the upper arrow key.}
@@ -268,7 +270,7 @@ Participants were reminded that the second phase did not include feedback anymor
 \section{Results}
 Figure \ref{fig:pred_obs_agg} illustrates for the six novel stimuli in the test phase the responses of participants separately for each time pressure condition as well as the predictions of the generalized context model with both the Minkowski and the discrete metric as well as the multidimensional and the unidimensional version across all parameter combinations reaching the accuracy criterion.
 
-\begin{figure}[h]
+\begin{figure}
 \centering
 \includegraphics[width = \textwidth]{fig_pred_obs_agg.png}
 \caption{Predicted and observed responses for the novel stimuli of the test phase. Points and errorbars on the left denote the mean response and the standard error across participants for each stimulus separately for each time pressure condition. The four violins on the right denote model predictions for all parameter combinations reaching the accuracy criterion. The shapes within the violins denote the median model predictions.}
@@ -364,14 +366,14 @@ To gain deeper insight into the cognitive processes underlying categorization, c
 
 The parameters of the generalized context model with the multidimensional Minkowski metric and the multidimensional discrete metric were fit to individual participants’ learning phase data. After fitting, the parameters of both model versions were fixed to the resulting optimal parameters for each participant. The attention weight parameter of the unidimensional models was fit to individual participants’ test phase data. To avoid over--fitting, the sensitivity parameter $c$ and temperature $\tau$ of the unidimensional models were not fitted, but fixed to the corresponding multidimensional model’s parameter estimates for each participant. The distribution of fitted parameters across participants is shown in Figure \ref{fig:par_multidim} for the multidimensional model and in Figure \ref{fig:par_unidim} for the unidimensional model versions. 
 
-\begin{figure}[h]
+\begin{figure}
 \centering
 \includegraphics[width = \textwidth]{fig_par_multidim.png}
 \caption{Distribution of parameter estimates for the multidimensional generalized context model. Grey shaded points within the violins indicate individual parameter estimates, the large point within each violin indicates the median parameter estimate across participants.}
 \label{fig:par_multidim}
 \end{figure}
 
-\begin{figure}[htbp]
+\begin{figure}
 \centering
 \includegraphics[width = \textwidth]{fig_par_unidim.png}
 \caption{Distribution of attention weight estimates for the unidimensional generalized context model. Bars indicate separately for the Minkowski metric and the discrete metric how many people are best described by full attention to the first and the third feature, respectively. Full attention to the second feature was not included as this model could not be discriminated from a random choice model. Parameter estimates of $c$ and $\tau$ were taken from the participants' respective optimal parameter estimates in the multidimensional generalized context model.}
@@ -427,7 +429,7 @@ Dimensionality & \multicolumn{1}{l}{Metric} & \multicolumn{1}{c}{$M$} & \multico
 \end{center}
 \end{sidewaystable}
 
-\begin{figure}[h]
+\begin{figure}
 \centering
 \includegraphics[width = \textwidth]{fig_log_lik.png}
 \caption{Negative log likelihood of the test phase data given model predictions for both time pressure conditions. Lower values indicate a better fit of the model to the test phase data. Points illustrate the individual negative log likelihoods. DISC and MINK denote the discrete metric and the Minkowski metric, respectively. MULTI and UNI denote multidimensional and unidimensional model versions, respectively. RANDOM = random choice model.}
@@ -439,14 +441,14 @@ While the aggregated analyses above test the performance of models across partic
 % In order to see how well the models describe the behavior of the individual participants and thus ultimately to shed light on the cognitive processes in categorization of individuals, I conducted model comparisons at the individual level. 
 The following procedure was used: For each model and participant, using the respective participant's optimal parameters, the log likelihood of the test phase data (i.e., the hold--out data) was computed. Individual log likelihoods were transformed into Akaike weights \citep{wagenmakers2004aic} and individual strategy classification was conducted on these Akaike weights. Specifically, if any model’s Akaike weight exceeded .90 the person was assigned to that model; else the person was classified as not described by any model. Figure \ref{fig:model_selection} illustrates how many participants each model could best predict. Figure \ref{fig:aic} further shows for each participant the Akaike weights of the different models.
 
-\begin{figure}[h]
+\begin{figure}
 \centering
 \includegraphics[width = \textwidth]{fig_model_selection.png}
 \caption{Number of participants best fit by the generalized context model versions separately for both time pressure conditions. DISC and MINK denote the discrete metric and the Minkowski metric, respectively. MULTI and UNI denote multidimensional and unidimensional model versions, respectively. RANDOM = random choice model.}
 \label{fig:model_selection}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}
 \centering
 \includegraphics[width = \textwidth]{fig_aic.png}
 \caption{Akaike weights of the models for each participant. Each bar represents one participant. The Akaike weights of the different models are stacked upon each other per participant and always sum up to 1. DISC and MINK denote the discrete metric and the Minkowski metric, respectively. MULTI and UNI denote multidimensional and unidimensional model versions, respectively. RANDOM = random choice model.}
@@ -564,12 +566,12 @@ The present study analyzed whether people with low cognitive capacities simplify
 
 \bibliography{example}
 
+\newpage
 \section{Appendix}
 The following instructions are the original instructions in German used in the experiment. The parts in italic highlight the instructions that were shown only to participants in the condition with time pressure. The ''x'' and ''y'' in the test phase instructions for participants with time pressure refer to the lower and upper integer of the exact time they had per trial.
 
 \subsection{General instructions}
 Herzlich Willkommen zu dieser Studie, in der wir untersuchen möchten, wie Menschen Kategorisierungen vornehmen.
-
 Bitte lesen Sie die Instruktionen aufmerksam durch. Sollten die Instruktionen unklar sein oder sollte das Experiment nicht richtig funktionieren, geben Sie bitte umgehend dem Studienleiter Bescheid.
 
 In dieser Studie geht es darum zu lernen, hypothetische Produkte zu zwei Marken (Marke L oder Marke R) zuzuordnen.
