@@ -20,9 +20,6 @@
 \restylefloat{table}
 \usepackage{pdfpages}
 %\renewcommand{\cellalign/theadalign}{cl}
-%\setmainfont{Times New Roman} 
-%\setsansfont{Times New Roman} 
-%\setmonofont{Times New Roman} 
 % Keywords command
 
 \newcommand{\cmmnt}[1]{\ignorespaces}
@@ -34,26 +31,28 @@
 \usepackage[doublespacing]{setspace}
 
 \setlength\epigraphwidth{.8\textwidth}
+%\setlength{\parskip}{0}
 
 \title{The Discrete Metric in Categorization Under Time Pressure}
-% Effect of Time Pressure on Metrics in Categorization
 \shorttitle{Discrete Metric Under Time Pressure}
 \author{Florian I. Seitz}
 \affiliation{University of Basel}
 
 \abstract{The generalized context model \citep{nosofsky1986attention}, which excels at explaining human categorization behavior, assumes the Minkowski metric to represent psychological distance between stimuli. In the present pre--registered study, I tested whether people with low cognitive capacities due to time pressure compare stimuli heuristically with the discrete metric which counts the number of non--identical feature values for a given stimulus pair. 
 Sixty--one psychology students from the University of Basel took part in a categorization experiment that manipulated time pressure between subjects. Participants first learned without time pressure to categorize eight stimuli under trial--by--trial supervision in the learning phase. Then, participants categorized six novel and four old stimuli without feedback in the test phase. Time pressure was applied to a random half of participants in the test phase.
-%61 psychology students from the University of Basel acquired the category structure of eight stimuli with three four--valued features  in the learning phase under trial--by--trial supervision. After meeting the accuracy criterion participants categorized six novel and four old stimuli 14 times without feedback in the test phase. I applied time pressure to a random half of participants in the test phase.
-Inferential tests showed that the generalized context model with the Minkowski metric accounted for participants' categorization behavior both with time pressure and without time pressure, $p$ < .001 \textit{effect size, conf interval}, respectively. Computational cognitive modeling yielded that, without time pressure, the model with the discrete metric and attention on all features and, with time pressure, a random choice model outperformed the other models both on the aggregate and on the individual level.
+Inferential tests showed that the generalized context model with the Minkowski metric accounted for participants' categorization behavior both with time pressure and without time pressure, $p$ < .001, respectively. Computational cognitive modeling yielded that, without time pressure, the model with the discrete metric and attention on all features and, with time pressure, a random choice model outperformed the other models both on the aggregate and on the individual level.
 The present findings suggest that under time pressure, people do not use the discrete metric, but respond more randomly. These findings imply that people with low cognitive capacities do not simplify psychological distance computation, but rather increase choice inconsistency. 
-%The way psychological distance is computed in categorization is thus independent of the amount of cognitive capacities.
-%I discuss related literature on choice inconsistency in preferential choice and also discuss to what extent a rule--based model could account for the findings.
 } 
 
 \keywords{categorization, cognitive capacities, time pressure, Minkowski metric, discrete metric, psychological distance}
 
 \begin{document}
-\includepdf[pages={1}]{thesis_begin.pdf}
+%\setmainfont{Arial} 
+%\setsansfont{Arial} 
+%\setmonofont{Arial}
+%\linespread{1.25}
+\includepdf[pages={1-4}]{thesis_begin.pdf}
+\pagenumbering{arabic}
 \maketitle
 
 %\vspace*{\fill}
@@ -178,11 +177,11 @@ The hypotheses are shown together with their behavioral predictions in Table \re
 \addlinespace
 \multicolumn{1}{l}{\emph{H1}} & \multicolumn{1}{l}{\emph{With time pressure, people use...}} \\
 \addlinespace
-H1a & MULTI-DISC or UNI-DISC, ... & stimulus 100: class ''B'', the others: class ''A''\\
+H1a & MULTI-DISC or UNI-DISC, ... & stimulus 100: class B, the others: class A\\
 \addlinespace
-H1b & else UNI-MINK, ...  & stimulus 003: class ''A'', the others: class ''B'' ($w_1$ = 1) \newline stimulus 003: class ''B'', the others: class ''A'' ($w_3$ = 1)\\
+H1b & else UNI-MINK, ...  & stimulus 003: class A, the others: class B ($w_1$ = 1) \newline stimulus 003: class B, the others: class A ($w_3$ = 1)\\
 \addlinespace
-H1c & else MULTI-MINK. & stimulus 100: class ''A'', the others: class ''B''\\
+H1c & else MULTI-MINK. & stimulus 100: class A, the others: class B\\
 \addlinespace
 H1d & rank order of model fits at the aggregate level: & MULTI-DISC = UNI-DISC > UNI-MINK > MULTI-MINK\\
 \addlinespace
@@ -192,7 +191,7 @@ H1f & rank order of model fits at the individual level: & MULTI-DISC = UNI-DISC 
 \midrule
 \multicolumn{1}{l}{\emph{H2}} & \multicolumn{1}{l}{\emph{Without time pressure, people use...}} \\
 \addlinespace
-H2a & MULTI-MINK. & stimulus 100: class ''A'', the others: class ''B''\\
+H2a & MULTI-MINK. & stimulus 100: class A, the others: class B\\
 \addlinespace
 H2b & rank order of model fits at the aggregate level: & MULTI-MINK > {MULTI-DISC, UNI-DISC, UNI-MINK}\\
 \addlinespace
@@ -212,21 +211,20 @@ H3b & more people use MULTI-MINK without than with time pressure & $N_{MULTI-MIN
 \end{threeparttable}
 \end{center}
 \end{sidewaystable}
-\vspace{\baselineskip}
 
 \section{Method}
 
 \subsection{Optimal Experimental Design}
 I designed the experimental task using optimal experimental design \citep{myung2009optimal}. An optimal experimental design is defined as a design with ``the greatest likelihood of differentiating the models under consideration'' \cite[][p. 500]{myung2009optimal}. Being able to discriminate between the discrete metric and the Minkowski metric means that each model version is associated with unique expected behavioral predictions in the experimental design. The models under consideration can thus be discriminated well by the data and can be associated more exclusively with the participants, in the expectation. Furthermore, through the maximization of model prediction differences, design optimization increases model recovery (i.e., the best--fitting model is also the model underlying the data; however, each scientific model is only an approximation of the participant's cognitive model, see \citealp{myung2009optimal}). 
 %The advantages of design optimization are thus two--fold: A participant's behavior can be associated more exclusively with one of the models under consideration and, given that the participant used one of the models under consideration, the probability is higher that this best--fitting model is the data--generating model. 
-Design optimization maximizes thus the experiment's degree of informativeness and cost-effectiveness while keeping the necessary sample size and trial size at a low level \citep{cavagnaro2009better, ouyang2016practical, raffert2012optimally, atkinson2007optimum, nelson2005finding}. 
+Design optimization maximizes thus the experiment's degree of informativeness and cost-effectiveness while keeping the necessary sample size and trial size at a low level \citep{cavagnaro2009better, raffert2012optimally, atkinson2007optimum, nelson2005finding}. 
 
 The advantages of design optimization are most pronounced when the different models differ quantitatively instead of qualitatively as well as when several variables have to be considered simultaneously during the designing process of the experiment making thus a good design hardly visible to the naked eye \citep{myung2009optimal}. Both criteria apply to the present study.
 The potential of optimal experimental design is shown in a reanalysis of the designs of the first two experiments of \cite{smith1998prototypes} which aimed at distinguishing the generalized context model \citep{nosofsky1986attention} from the multiplicative prototype model \citep{smith1998prototypes} by using stimuli with six binary features \citep{myung2009optimal}. While the experimental designs of \citeauthor{smith1998prototypes} had model recovery rates of 72.9\% and of 88.8\%, the optimal design that was possible yielded a model recovery rate of 96.3\%, recovering thus in more than 19 of 20 cases the model underlying the data.  
 
 In light of these insights, I ran simulations to find a categorization environment that, in the expectation, optimally discriminates the discrete metric and the Minkowski metric, both implemented in the generalized context model, given the responses during the test phase.\footnote{In the first simulations I further wanted to discriminate the generalized context model from the multiplicative prototype model. However, as simultaneously discriminating the two models and the two metrics led to insufficient model recovery rates, I dropped the multiplicative prototype model from the remaining simulation analyses.} Finding the best possible categorization environment included determining which stimuli belong to which category in the learning phase and which stimuli are presented in the test phase. The stimuli consisted of three features with four values each resulting in 64 possible stimuli. The learning phase included eight of these 64 stimuli constrained to differed from each other maximally by 1 unit per feature. This constraint ensures that the discrete metric and the Minkowski metric yield identical distances and thus none is favored by the learning phase design. The simulations were chronologically iterated over (a) the design (i.e., all possible category structures with equal category base rates for all subsets of eight of 64 stimuli in the learning phase), (b) the true model (i.e., the generalized context model with either the Minkowski metric or the discrete metric), (c) the true parameter combination (i.e., attention weights $w$s ranging from $0$ to $1$ in steps of $1/3$ and the overall sensitivity parameter $c$ ranging from $0.1$ to $4.1$ in steps of $1$), and (d) the fitting model (i.e., the generalized context model with either the Minkowski metric or the discrete metric).
 
-For a given design, true model, and true parameter combination I simulated binary participant responses (i.e., category A or B) for the learning set which was replicated 20 times and for the test set (i.e., the stimuli that were not part of the learning stimuli) which was replicated 10 times. Simulated participant responses were based on the true model's predictions. Then, the free parameters (i.e., attention weights $w$s and the overall sensitivity parameter $c$) of both models were fit to the simulated data of the learning set (excluding the first eight trials) and fixed to the resulting optimal parameters for each participant. Next, I computed predictions for the test set with both fitted models and calculated the log likelihood of the participants' test phase responses, which have been simulated with the true model, using the predictions of each fitted model. The fitting model with the higher log likelihood was defined as the winning model. This procedure allowed conducting model recoveries for every design across all permissible parameter combinations. The optimal design was the design for which the winning model recovered the true data--simulating model best across the permissible model parameters. In the optimal design, the learning criterion was met by both models after adding a softmax choice rule. From the 56 stimuli of the best design that were not included in the learning set, the six stimuli that discriminated models best were selected. Figure \ref{fig:environment} shows the stimuli in the resulting design.
+For a given design, true model, and true parameter combination I simulated binary participant responses (i.e., category A or B) for the learning set which was replicated 20 times and for the test set (i.e., the stimuli that were not part of the learning stimuli) which was replicated 10 times. Simulated participant responses were based on the true model's predictions. Then, the free parameters (i.e., attention weights $w$s and the overall sensitivity parameter $c$) of both models were fit to the simulated data of the learning set (excluding the first eight trials) and fixed to the resulting optimal parameters for each participant. Next, I computed predictions for the test set with both fitted models and calculated the log likelihood of the participants' test phase responses using the predictions of each fitted model. The fitting model with the higher log likelihood was defined as the winning model. This procedure allowed conducting model recoveries for every design across all permissible parameter combinations. The optimal design was the design for which the winning model recovered the true data--simulating model best across the permissible model parameters. In the optimal design, the learning criterion was met by both models after adding a softmax choice rule. From the 56 stimuli of the best design that were not included in the learning set, the six stimuli that discriminated models best were selected. Figure \ref{fig:environment} shows the stimuli in the resulting design.
 
 \begin{figure}
 \centering
@@ -344,7 +342,7 @@ Participants needed about 200 trials to reach the accuracy criterion in the cond
 
 A linear mixed model with logit link was fit to the observed responses for the novel stimuli in the test phase using the lme4 R package. As the model did not converge in its pre--registered form, I diminished the number of estimated parameters. Specifically, I aggregated the stimuli 221, 231, 321, and 331 for which the model predictions were similar (see Table \ref{tab:environment}). Furthermore, I fit a random intercept, but no random slope per participant instead of the pre--registered random slope, but no random intercept. In the final model the criterion was the participant response, the fixed effects were time pressure condition, stimulus (with three levels), and the interaction thereof, and a random intercept was fit by participant. Table \ref{tab:estimates} shows the regression coefficients of the final model calculated using sum--to--zero contrasts \citep{singmann2017introduction}. 
 
-If people use the discrete metric with time pressure and the multidimensional Minkowski metric without time pressure, then they should classify the stimuli differently in dependence of the time pressure condition. To investigate this effect, I tested whether the interaction between time pressure and stimulus was necessary using relative AIC weights \citep[][p. 194]{wagenmakers2004aic}. The full model with the interaction term had $5.36 * 10^{30}$ higher AIC weights than a restricted model without the interaction term indicating that the interaction between time pressure and stimulus is necessary. A supplementary comparison with a likelihood ratio test corroborated the superiority of the model with the interaction term ($\chi^{2}(2)$ = 145.51, $p$ < .001). 
+If people use the discrete metric with time pressure and the multidimensional Minkowski metric without time pressure, then they should classify the stimuli differently in dependence of the time pressure condition. To investigate this effect, I tested whether the interaction between time pressure and stimulus was necessary using relative AIC weights \citep[][p. 194]{wagenmakers2004aic}. The full model with the interaction term had $5.36 * 10^{30}$ higher AIC weights than a restricted model without the interaction term indicating that the interaction between time pressure and stimulus is necessary. A supplementary comparison with a likelihood ratio test corroborated the superiority of the model with the interaction term, $\chi^{2}(2)$ = 145.51, $p$ < .001. 
 
 \begin{center}
 \begin{threeparttable}
@@ -371,66 +369,18 @@ Time Pressure x Stimulus 003 & 0.93 & 0.09 & 10.81 & <.001\\
 \end{center}
 \vspace{\baselineskip}
 
-\begin{sidewaystable}
-\begin{center}
-\begin{threeparttable}
-\caption{Inferential analyses}
-\label{tab:inferential}
-\begin{tabular*}{\textwidth}{lp{55mm}p{100mm}ll}
-\toprule
-\multicolumn{1}{l}{Index} & \multicolumn{1}{l}{Hypothesis} & \multicolumn{1}{l}{Prediction} & \multicolumn{1}{l}{$P(R_{A}|i)$} & \multicolumn{1}{l}{Betas}\\
-\midrule
-\addlinespace
-\multicolumn{1}{l}{\emph{H1}} & \multicolumn{1}{l}{\emph{With time pressure, people use...}} \\
-\addlinespace
-H1a & MULTI-DISC or UNI-DISC, ... & stimulus 100: class ''B'', the others: class ''A'' & -0.18 & 0.86\\
-\addlinespace
-H1b & else UNI-MINK, ...  & stimulus 003: class ''A'', the others: class ''B'' ($w_1$ = 1) \newline stimulus 003: class ''B'', the others: class ''A'' ($w_3$ = 1) & -0.21 & 0.83\\
-\addlinespace
-H1c & else MULTI-MINK. & stimulus 100: class ''A'', the others: class ''B'' & 20.56 & <.001\\
-\addlinespace
-H1d & \multicolumn{2}{p{135mm}}{rank order of model fits at the aggregate level: \newline MULTI-DISC = UNI-DISC > UNI-MINK > MULTI-MINK > RANDOM} & -24.28 & <.001\\
-\addlinespace
-H1e & \multicolumn{2}{l}{MULTI-DISC and UNI-DISC describe the most participants} & -10.70 & <.001\\
-\addlinespace
-H1f & \multicolumn{2}{p{135mm}}{rank order of model fits at the individual level: \newline MULTI-DISC = UNI-DISC > UNI-MINK > MULTI-MINK > RANDOM} & 10.81 & <.001\\
-\midrule
-\multicolumn{1}{l}{\emph{H2}} & \multicolumn{1}{l}{\emph{Without time pressure, people use...}} \\
-\addlinespace
-H2a & MULTI-MINK. & stimulus 100: class ''A'', the others: class ''B'' & -0.18\\
-\addlinespace
-H2b & \multicolumn{2}{p{150mm}}{rank order of model fits at the aggregate level: \newline MULTI-MINK > {MULTI-DISC, UNI-DISC, UNI-MINK} > RANDOM} & 0.09 & -24.28\\
-\addlinespace
-H2c & \multicolumn{2}{p{150mm}}{rank order of model fits at the individual level: \newline MULTI-MINK > {MULTI-DISC, UNI-DISC, UNI-MINK} > RANDOM} & 0.09 & 10.81 \\
-\midrule
-\multicolumn{1}{l}{\emph{H3}} & \multicolumn{1}{l}{\emph{Across time pressure conditions}} \\
-\addlinespace
-H3a & \multicolumn{2}{p{150mm}}{more people use MULTI-DISC with than without time pressure} & 0.18 & -0.18\\
-\addlinespace
-H3b & \multicolumn{2}{p{150mm}}{more people use MULTI-MINK without than with time pressure} & 0.09 & -24.28\\
-\bottomrule
-\addlinespace
-\end{tabular*}
-\begin{tablenotes}[para]
-\textit{Note.} DISC and MINK denote the discrete metric and the Minkowski metric, respectively. MULTI and UNI denote multidimensional and unidimensional model versions of the generalized context model \citep{nosofsky1989further}, respectively. RANDOM = random choice model.
-\end{tablenotes}
-\end{threeparttable}
-\end{center}
-\end{sidewaystable}
-\vspace{\baselineskip}
-
 The following tests refer to the coefficients of the full model. I pre--registered to accept H1a, H1b, H1c, and H2a, respectively, in case the coefficient of a stimulus of interest differed from the coefficients of the remaining novel stimuli of the test phase by the algebraic sign in the correct direction or by a significant one-sided contrast. Tests of contrasts used the Holm--Bonferroni alpha--level correction \citep{holm1979simple}. For an overview of the hypotheses and the behavioral predictions, see Table \ref{tab:hypotheses} and Figure \ref{fig:pred_obs_agg}. 
 
-H1a (people use the discrete metric under time pressure) predicted that stimulus 100 is mostly classified into class ''B'', whereas the remaining stimuli are mostly classified into class ''A'' (see Figure \ref{fig:pred_obs_agg}). However, the linear mixed model results show that stimulus 100 was mostly classified into class ''A'' with $b_{100}$ = 0.73 > $ b_{221,231,321,331}$ = 0.30 > $b_{003}$ = -1.24 ($b$s are logit least--square means and higher $b$s indicate more category ''A'' responses). The difference between $b_{100}$ and the remaining coefficients was reliable in a planned post--hoc contrast, but in the opposite direction as hypothesized, $OR$ = 10.9, $SE$ = 2.99, $z$(Inf) = 8.69, $p$ = 1. H1a was thus rejected. \textit{recheck this} 
+H1a (people use the discrete metric under time pressure) predicted that stimulus 100 is mostly classified into class B, whereas the remaining stimuli are mostly classified into class A (see Figure \ref{fig:pred_obs_agg}). However, the linear mixed model results show that stimulus 100 was mostly classified into class A with $b_{100}$ = 0.73 > $ b_{221,231,321,331}$ = 0.30 > $b_{003}$ = -1.24 ($b$s are logit least--square means and higher $b$s indicate more category A responses). The difference between $b_{100}$ and the remaining coefficients was reliable in a planned post--hoc contrast, but in the opposite direction as hypothesized, $OR$ = 10.9, $SE$ = 2.99, $z$(Inf) = 8.69, $p$ = 1. H1a was thus rejected. 
 
-H1b (people use a unidimensional Minkowski metric under time pressure) predicted stimulus 003 is classified into another class than the remaining stimuli (see Figure \ref{fig:pred_obs_agg}). If the first feature is attended to, stimulus 003 is mostly classified into class ''A'' and the remaining stimuli into class ''B''. If the third feature is attended to, stimulus 003 is mostly classified into class ''B'' and the remaining stimuli into class ''A''. The linear mixed model results showed that stimulus 003 was mostly classified into class ''B'' and the remaining stimuli into class ''A''. The difference between $b_{003}$ and the remaining coefficients was reliable in a planned post--hoc contrast, $OR$ = 0.03, $SE$ = 0.01, $z$(Inf) = -12.44, $p$ < .001. H1b was thus accepted.
+H1b (people use a unidimensional Minkowski metric under time pressure) predicted stimulus 003 is classified into another class than the remaining stimuli (see Figure \ref{fig:pred_obs_agg}). If the first feature is attended to, stimulus 003 is mostly classified into class A and the remaining stimuli into class B. If the third feature is attended to, stimulus 003 is mostly classified into class B and the remaining stimuli into class A. The linear mixed model results showed that stimulus 003 was mostly classified into class B and the remaining stimuli into class A. The difference between $b_{003}$ and the remaining coefficients was reliable in a planned post--hoc contrast, $OR$ = 0.03, $SE$ = 0.01, $z$(Inf) = -12.44, $p$ < .001. H1b was thus accepted.
 
-H1c (people use the multidimensional Minkowski metric under time pressure) predicted the reverse of H1a, namely that stimulus 100 is mostly classified into class ''A'' and the remaining stimuli into class ''B'' (see Figure \ref{fig:pred_obs_agg}). The results of the linear mixed model support these findings and the difference between $b_{100}$ and the remaining coefficients was reliable in a planned post--hoc contrast (see H1a above). H1c was thus accepted.
+H1c (people use the multidimensional Minkowski metric under time pressure) predicted the reverse of H1a, namely that stimulus 100 is mostly classified into class A and the remaining stimuli into class B (see Figure \ref{fig:pred_obs_agg}). The results of the linear mixed model support these findings and the difference between $b_{100}$ and the remaining coefficients was reliable in a planned post--hoc contrast (see H1a above). H1c was thus accepted.
 
-H2a (people use the multidimensional Minkowski metric without time pressure) predicted that stimulus 100 is rather classified into class ''A'' and the remaining stimuli into class ''B'' (see Figure \ref{fig:pred_obs_agg}). The results of the linear mixed model were in line with this prediction with $b_{100}$ = 2.52 > $ b_{221,231,321,331}$ = 0.52 > $b_{003}$ = -3.02 (again, higher $b$s indicate more category ''A'' responses). The difference between $b_{100}$ and the remaining coefficients was reliable in a planned post--hoc contrast, $OR$ = 1870, $SE$ = 738.90, $z$(Inf) = 19.03, $p$ < .001. H2a was thus accepted.
+H2a (people use the multidimensional Minkowski metric without time pressure) predicted that stimulus 100 is rather classified into class A and the remaining stimuli into class B (see Figure \ref{fig:pred_obs_agg}). The results of the linear mixed model were in line with this prediction with $b_{100}$ = 2.52 > $ b_{221,231,321,331}$ = 0.52 > $b_{003}$ = -3.02 (again, higher $b$s indicate more category A responses). The difference between $b_{100}$ and the remaining coefficients was reliable in a planned post--hoc contrast, $OR$ = 1870, $SE$ = 738.90, $z$(Inf) = 19.03, $p$ < .001. H2a was thus accepted.
 
 \subsection{Cognitive Modeling}
-To gain deeper insight into the cognitive processes underlying categorization, cognitive modeling was employed. During the modeling all fitting used maximum likelihood. The parameters for the different model versions were as follows: The multidimensional Minkowski metric and the multidimensional discrete metric had both five parameters, namely three attention weights $w$s, the sensitivity parameter $c$ (with $0 \leq c \leq 5$), and the softmax choice-rule parameter temperature $\tau$ (with $0.1 \leq \tau \leq 0.4$). The unidimensional Minkowski metric and the unidimensional discrete metric had both three parameters (which attention weight $w$ is set to 1, $c$, and $\tau$ as defined before). The decay parameter $p$ and the exponent of the metric $r$ were fixed to 1 for all model versions, as the experiment used discriminable stimuli with separable features \citep{ennis1988confusable, nosofsky1985luce, shepard1964attention, garner1974processing}. The response bias $b_A$ was not included in the analyses, as both categories had equal base rates and, hence, there was no reason that one category is chosen predominantly over the other. 
+To gain deeper insight into the cognitive processes underlying categorization, cognitive modeling was employed. During the modeling all fitting used maximum likelihood. The parameters for the different model versions were as follows: The multidimensional Minkowski metric and the multidimensional discrete metric had both five parameters, namely three attention weights $w$s, the sensitivity parameter $c$ (with $0 \leq c \leq 5$), and the softmax choice-rule parameter temperature $\tau$ (with $0.1 \leq \tau \leq 10$). The unidimensional Minkowski metric and the unidimensional discrete metric had both three parameters (which attention weight $w$ is set to 1, $c$, and $\tau$ as defined before). The decay parameter $p$ and the exponent of the metric $r$ were fixed to 1 for all model versions, as the experiment used discriminable stimuli with separable features \citep{ennis1988confusable, nosofsky1985luce, shepard1964attention, garner1974processing}. The response bias $b_A$ was not included in the analyses, as both categories had equal base rates and, hence, there was no reason that one category is chosen predominantly over the other. 
 
 The parameters of the multidimensional Minkowski metric and the multidimensional discrete metric were fit to individual participants’ learning phase data. After fitting, the parameters of both model versions were fixed to the resulting optimal parameters for each participant. The attention weight parameter of the unidimensional Minkowski metric and the unidimensional discrete metric was fit to individual participants’ test phase data. To avoid over--fitting, the sensitivity parameter $c$ and temperature $\tau$ of the unidimensional models were not fit, but fixed to the corresponding multidimensional model’s parameter estimates for each participant. The distribution of fitted parameters across participants is shown in Figure \ref{fig:par_multidim} for the multidimensional model versions and in Figure \ref{fig:par_unidim} for the unidimensional model versions. 
 
@@ -450,7 +400,7 @@ The parameters of the multidimensional Minkowski metric and the multidimensional
 
 Participants paid much attention to the second feature and had high sensitivity $c$ and low temperature $\tau$ at the boundary of the valid range of the respective parameters which points towards many corner point solutions. For the unidimensional discrete metric, 32 of the 61 participants were best fit by the model with full attention on the first feature, the remaining 29 participants by full attention on the third feature, $\chi^{2}(1)$ = 0.15, $p$ = .70. For the unidimensional Minkowski metric, 21 of the 61 participants were best fit by the model with full attention on the first feature, the remaining 40 participants by full attention on the third feature, $\chi^{2}(1)$ = 5.92, $p$ = .01.
 
-In the following I compare the multidimensional discrete metric, the multidimensional Minkowski metric, the unidimensional discrete metric, and the unidimensional Minkowski metric. All these model versions were expected to outperform a baseline random choice model. If a unidimensional model attending to the second feature described a participant best, I assumed they followed the random choice model, because in my design these two models could not be distinguished. 
+In the following I compare the multidimensional discrete metric, the multidimensional Minkowski metric, the unidimensional discrete metric, and the unidimensional Minkowski metric. All these versions of the generalized context model were expected to outperform a baseline random choice model. If a unidimensional model attending to the second feature described a participant best, I assumed they followed the random choice model, because in my design these two models could not be distinguished. 
 
 \subsubsection{Model comparison at the aggregate level} \label{sec:res_agg}
 For each model, using each participant's optimal parameters, the median log likelihood of the test phase data (i.e., the hold--out data) was computed across participants separately for the condition with and without time pressure. The median log likelihoods were transformed into evidence strengths \citep[Akaike weights,][]{wagenmakers2004aic}, and pairwise comparisons between models were conducted \citep[as in][p. 194]{wagenmakers2004aic}. To determine the rank order of models in predicting behavior across participants, a model was accepted as superior to another model if its evidence ratio\footnote{The evidence ratio is the normalized probability of one model over the other \citep[see][p. 194]{wagenmakers2004aic}.} in the paired comparison exceeded .90, rejected if it was inferior to .10; otherwise, inconclusive evidence resulted. 
@@ -536,7 +486,7 @@ Furthermore, the multidimensional Minkowski metric described only 2 of 30 people
 
 A pairwise comparison between the multidimensional discrete metric and the multidimensional Minkowski metric for both time pressure conditions showed that the multidimensional discrete metric and the multidimensional Minkowski metric described more participants without time pressure (n = 15 and n = 9, respectively) than with time pressure (n = 3 and n = 2, respectively). Which of the two models described a participant was thus not correlated with the time pressure condition, OR = 1.11, 95\% CI = [0.08, 11.75], $p$ = 1.
 
-\subsubsection{Summary}
+\subsection{Summary}
 The inferential tests on the aggregate level suggested that people use the Minkowski metric independent of whether they face time pressure or not, which is partially in line with the hypotheses. As hypothesized, without time pressure participants' choices were in line with the multidimensional Minkowski metric, which is the cognitively more complex metric than the discrete metric. However, with time pressure the test phase data were in line with the unidimensional Minkowski metric with attention on the third feature and with the multidimensional Minkowski metric, whereas I hypothesized that people use the discrete metric. These results suggest that people under time pressure do not use a different metric than people without time pressure, but possibly reduce the number of features they attend to. This is in line with the feature--sampling process discussed in the introduction, which assumes that time pressure limits the number of features that a person is able to sample and process and that can be used for categorization \citep{lamberts1995categorization}.  
 %the unidimensional Minkowski metric with attention on the third feature fulfills both the acceptance criteria of inverse algebraic signs and a significant contrast, and the multidimensional version fulfills the acceptance criterion of a significant contrast. 
 
@@ -604,6 +554,7 @@ Hence, the results with the discrete--threshold metric did not qualitatively dif
 The present thesis examined in a categorization task whether people, given they use the generalized context model \citep{nosofsky1986attention}, apply the heuristic discrete metric instead of the cognitively more extensive Minkowski metric when put under time pressure. Evidence from inferential statistics was not in line with this hypothesis as both with time pressure and without time pressure a cognitive model using the Minkowski metric was able to predict participant behavior. Cognitive modeling, in contrast, yielded that the multidimensional discrete metric outperformed the multidimensional Minkowski metric in both time pressure conditions. Contrary to expectations, the multidimensional discrete metric excelled in the condition without time pressure, but was outperformed by a random choice model in the condition with time pressure. More people with time pressure than without time pressure were described by the multidimensional discrete metric, which is against the hypotheses, and by the multidimensional Minkowski metric, which is in line with the hypotheses, but not statistically significant. In sum, these findings suggest that people do not use the discrete metric under time pressure, but rather the Minkowski metric (inferential tests) or respond more randomly (cognitive modeling). Cognitive modeling, however, also suggests that the discrete metric competes the Minkowski metric in describing participants independent of time pressure. 
 
 \subsection{Implications for Theory and Research}
+\subsubsection{Choice inconsistency with time pressure}
 The present results indicate that people do not use different metrics in conditions with time pressure and without time pressure. Rather, there is an increase of random categorization when people have reduced cognitive capacities due to time pressure. Similar findings stem from the domain of preferential choice, where cognitive load produced by a secondary task increased participants' inconsistency in preferences \citep{olschewski2018taxing, burks2009cognitive}. 
 \cite{olschewski2018taxing} modeled choice inconsistency with a probit choice model, where the utility of any given option is variable, but people always choose the option with the momentarily highest utility, and with the trembling hand error, where the utility of any given option is fixed, but people choose with a certain probability the option with the smaller utility. 
 
@@ -612,6 +563,9 @@ Similarly, choice inconsistency may be integrated into the generalized context m
 In the present study, choice inconsistency was modeled with softmax, which makes categorization responses less deterministic with increasing temperature $\tau$. Fitting the test phase data exploratively showed that $\tau$ was higher under time pressure than without time pressure when using the multidimensional Minkowski metric (with time pressure: $M$ = 0.38, $Md$ = 0.17, $SD$ = 0.45; without time pressure: $M$ = 0.14, $Md$ = 0.10, $SD$ = 0.09; $t$(31.05) = -2.80, $p$ = .004) and when using the multidimensional discrete metric (with time pressure: $M$ = 0.98, $Md$ = 0.22, $SD$ = 2.48; without time pressure: $M$ = 0.13, $Md$ = 0.10, $SD$ = 0.07; $t$(29.05) = -1.88, $p$ = .03). Thus, independent of the metric used to fit $\tau$, the results support the insight that people respond more inconsistently under time pressure than without time pressure.
 
 Given the increase of inconsistent responses under low cognitive capacities, further research should try to identify the cognitive underpinnings of choice inconsistency in categorization (i.e., whether responses are inconsistently computed such as with a probit choice model or inconsistently executed such as with a trembling hand error). Which factors drive choice inconsistency is debated as well in other psychological domains \citep{blavatskyy2010models}. To that end, experimental design optimization \citep{myung2004model} could reveal which assumptions have to be met such that different models of stochastic choice can be discriminated from each other and which environments maximize discrimination and are thus potential candidates to test stochastic choice models against each other.
+
+\subsubsection{The discrete metric without time pressure}
+Interestingly, the results of the present study suggest that people use the multidimensional discrete metric rather without time pressure than with time pressure. However, these results may be explained by how I designed the stimulus environment. More specifically, the environment of the present study has been generated such that the discrete metric and the Minkowski metric lead to equal distances between learning stimuli. As already mentioned, in such an environment it is ecologically rational to use the heuristic discrete metric in the learning phase, as it exploits all available information from the environment \citep{todd2007environments}. Participants thus may have used the multidimensional discrete metric during learning and responded faster than if they would have used the computationally more extensive multidimensional Minkowski metric. Establishing a time limit from the response times of the learning phase might have rendered the use of the multidimensional discrete metric in the time pressure condition computationally too extensive. As a result, people reduced their choice consistency. In the condition without time pressure, participants were still able to use the discrete metric, which is in line with the data, as 15 of 31 participants without time pressure were best fit by the multidimensional discrete metric. Further research should investigate this idea in more detail with different heuristic categorization processes (e.g., unidimensional models and prototype--based models) that are ecologically rational given the stimulus environment in the learning phase.
 
 \subsection{Alternative Cognitive Processes: Rule--Based Decision--Making}
 Parameter estimates in Figure \ref{fig:par_multidim} show that participants in the aggregate attended primarily to the second feature. However, in my design, the second feature alone was uninformative for participants, as both categories were equally distributed across the values of the second feature in the learning phase (see Figure \ref{fig:environment}). In other words, there were both two members of category A and two members of category B that had a value of 0 and a value of 1 on the second feature. Knowing the value of the second feature gives thus by itself no information of category membership. In the generalized context model attending to the second feature shifts the predictions to the random choice level of .50 (see also Table \ref{tab:environment}). 
@@ -636,8 +590,6 @@ Another issue that I did not address in this study is the possibility that peopl
 
 A third issue of the present design is that feature values are discrete integers and visually well discriminable. In such a case, using the Minkowski metric might not be very cognitively demanding and as a result the relative advantage of the discrete metric concerning its computational simplicity is diminished. In environments with continuous features where the calculation of metric feature differences is computationally more extensive the cognitive simplicity of the discrete metric relative to the Minkowski metric may be more pronounced. In such cases, it is possible that people use the heuristic discrete metric more often under low cognitive capacities than in the present study.
 
-Finally, the environment of the present study has been generated such that the discrete metric and the Minkowski metric lead to equal distances between learning stimuli. As already mentioned, in such an environment it is ecologically rational to use the heuristic discrete metric in the learning phase, as it exploits all available information from the environment \citep{todd2007environments}. Participants thus may have used the multidimensional discrete metric during learning and responded faster than if they would have used the computationally more extensive multidimensional Minkowski metric. Establishing a time limit from the response times of the learning phase might have rendered the use of the multidimensional discrete metric in the time pressure condition computationally too extensive. As a result, people reduced their choice consistency. In the condition without time pressure, participants were still able to use the discrete metric, which is in line with the data, as 15 of 31 participants without time pressure were best fit by the multidimensional discrete metric.
-
 \subsection{Conclusion}
 The present study analyzed within the framework of the generalized context model \citep{nosofsky1986attention} whether people with low cognitive capacities simplify the categorization process by using the heuristic discrete metric instead of the Minkowski metric. Results indicate that people do not use different metrics in dependence of the time available for categorization: Inferential statistics found that the Minkowski metric could predict responses for the test phase both with and without time pressure. Cognitive modeling found that the discrete metric well described participants without time pressure. In return, time pressure led to an increase of random categorization, which is in line with research on the effects of cognitive load on choice inconsistency \citep{olschewski2018taxing}. These results suggest that people do not adapt their strategy to the available cognitive capacities, but rather display cognitive overload which is manifested by choice inconsistency. Further categorization research may implement different existing models of stochastic choice \citep{blavatskyy2010models, becker1963stochastic} to investigate the cognitive processes underlying choice inconsistency under low cognitive capacities.
 
@@ -645,7 +597,7 @@ The present study analyzed within the framework of the generalized context model
 
 \newpage
 \section{Appendix}
-The following instructions are the original instructions in German used in the experiment. The parts in italic highlight the instructions that were shown only to participants in the condition with time pressure. The ''x'' and ''y'' in the test phase instructions for participants with time pressure refer to the lower and upper integer of the exact time the given participant had per trial.
+The following instructions are the original instructions in German used in the experiment. The parts in italic highlight the instructions that were shown only to participants in the condition with time pressure. The $x$ and $y$ in the test phase instructions for participants with time pressure refer to the lower and upper integer of the exact time the given participant had per trial.
 
 \subsection{General Instructions}
 Herzlich Willkommen zu dieser Studie, in der wir untersuchen möchten, wie Menschen Kategorisierungen vornehmen.

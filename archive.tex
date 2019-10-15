@@ -19,5 +19,37 @@ Out of the 64 possible stimuli we predefined to have eight stimuli in the learni
 Model Recovery:
 The generalized context model with the discrete metric was correctly recovered in 100\% of all cases, the generalized context model with the Minkowski metric was correctly recovered in 86.7\% \textbf{(I have to recheck this)} of all cases. 
 
+Results: inferential tests
+\begin{sidewaystable}
+\begin{center}
+\begin{threeparttable}
+\caption{Inferential analyses}
+\label{tab:inferential}
+\begin{tabular*}{\textwidth}{llp{110mm}}
+\toprule
+\multicolumn{1}{l}{Index} & \multicolumn{1}{l}{Model} & \multicolumn{1}{l}{Prediction}\\
+\midrule
+\addlinespace
+\multicolumn{1}{l}{\emph{H1}} & \multicolumn{1}{l}{\emph{With time pressure}} \\
+\addlinespace
+H1a & MULTI-DISC or UNI-DISC & stimulus 100: class B, the others: class A\\
+\addlinespace
+H1b & UNI-MINK & stimulus 003: class A, the others: class B ($w_1$ = 1) \newline stimulus 003: class B, the others: class A ($w_3$ = 1)\\
+\addlinespace
+H1c & MULTI-MINK & stimulus 100: class A, the others: class B\\
+\midrule
+\multicolumn{1}{l}{\emph{H2}} & \multicolumn{1}{l}{\emph{Without time pressure}} \\
+\addlinespace
+H2a & MULTI-MINK & stimulus 100: class A, the others: class B\\
+\bottomrule
+\addlinespace
+\end{tabular*}
+\begin{tablenotes}[para]
+\textit{Note.} DISC and MINK denote the discrete metric and the Minkowski metric, respectively. MULTI and UNI denote multidimensional and unidimensional model versions of the generalized context model \citep{nosofsky1989further}, respectively. Any sensible model is expected to outperform a random choice model. Behavioral predictions for H1a, H1b, H1c, and H2a are based on Figure \ref{fig:pred_obs_agg}.
+\end{tablenotes}
+\end{threeparttable}
+\end{center}
+\end{sidewaystable}
+
 Explorative analyses: Linear rule--based model
 When using a random half of the test phase data for each participant, the mean estimated regression coefficients (with standard deviations in brackets) turned out very similar with -0.05 (0.18) for the first feature, 0.06 (0.12) for the second feature, -0.18 (0.15) for the third feature, and 0.72 (0.29) for the intercept ($R^2$ = .32). The model comparison revealed that in the condition with time pressure 16 people were described by the rule--based model, two by the random choice model, one person by the unidimensional Minkowski model and the multidimensional Minkowski model, respectively, and ten people couldn't be described by any of the models. Without time pressure, 10 people were described by the rule--based model, nine by the multidimensional discrete model, six by the multidimensional Minkowski model, and six couldn't be described by any of the models. 
